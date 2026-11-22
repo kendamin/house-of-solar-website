@@ -106,6 +106,23 @@
   .label button::after{content:"";position:absolute;inset:0}
   .label .flag{justify-self:start;background:var(--red);color:#fff;border-radius:999px;padding:3px 10px}
 
+  .pricelist{margin-top:28px;display:grid;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+  @media (min-width:900px){.pricelist{grid-template-columns:.8fr 1.2fr;align-items:start;padding:30px}}
+  .pricelist h3{font-size:clamp(28px,3.4vw,38px)}
+  .pricelist p{color:var(--muted);font-size:15px;margin-top:8px}
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+  .pricelist table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+  .pricelist th,.pricelist td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  .pricelist thead th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .pricelist tbody th{font-weight:700}
+  .pricelist tbody th small{display:block;font-weight:500;color:var(--muted);font-size:13px}
+  .pricelist td{text-align:right;font-weight:800;white-space:nowrap;color:var(--red)}
+  .pricelist thead th:last-child{text-align:right}
+  .pricelist tbody tr:last-child>*{border-bottom:0}
+  .pricelist{margin-top:36px}
+  .ship-line{border-top:1px solid var(--line);padding-top:12px;margin-top:14px !important}
+  .ship-line b{color:var(--ink)}
+
   /* quiet breather */
   .breather{padding-block:clamp(48px,7vw,80px);background:var(--paper-2)}
   .breather .wrap{display:grid;gap:18px;align-items:center}
@@ -345,7 +362,7 @@ document.addEventListener('click', function (e) {
         <div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="7" width="16" height="12" rx="2"/><path d="M19 11h2v4h-2M7 4v3M15 4v3M9 13h4M11 11v4"/></svg></div>
         <div class="label">
           <h3>Batteries</h3>
-          <dl><dt>Does</dt><dd>Stores the day's power for the night.</dd><dt>Extra</dt><dd>Models with Bluetooth, check them on your phone</dd></dl>
+          <dl><dt>Does</dt><dd>Stores the day's power for the night.</dd><dt>Brands</dt><dd>Genix Green, 200Ah and 314Ah, 5-year warranty</dd><dt>Extra</dt><dd>Models with Bluetooth, check them on your phone</dd></dl>
           <button type="button" data-quote="battery">Ask for the price →</button>
         </div>
       </li>
@@ -353,8 +370,16 @@ document.addEventListener('click', function (e) {
         <div class="art"><img src="../assets/mounting-800.webp" width="800" height="600" loading="lazy" alt="Bundles of aluminium mounting rails in a van"></div>
         <div class="label">
           <h3>Mounting kits</h3>
-          <dl><dt>Does</dt><dd>Holds the panels to your roof or frame.</dd><dt>Price</dt><dd>Budget-friendly kits in stock</dd></dl>
+          <dl><dt>Does</dt><dd>Holds the panels to your roof or frame.</dd><dt>Price</dt><dd>Rails ₱485, clamps ₱38 (promo list below)</dd></dl>
           <button type="button" data-quote="mounting">Ask for the price →</button>
+        </div>
+      </li>
+      <li class="rise">
+        <div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M12 3s-5 6-5 10a5 5 0 0 0 10 0c0-4-5-10-5-10z"/><path d="M10 14a2 2 0 0 0 2 2"/></svg></div>
+        <div class="label">
+          <h3>Solar water pumps</h3>
+          <dl><dt>Does</dt><dd>Pumps water on solar power, for farms and homes.</dd><dt>Types</dt><dd>Submersible and surface</dd><dt>Warranty</dt><dd>2 years</dd></dl>
+          <button type="button" data-quote="pump">Ask for the price →</button>
         </div>
       </li>
       <li class="rise">
@@ -366,6 +391,12 @@ document.addEventListener('click', function (e) {
         </div>
       </li>
     </ul>
+    <div class="wrap">
+      <div class="pricelist rise" id="prices">
+        <div><h3>Mounting kit prices</h3><p>Distributor promo prices posted on November 13, 2026. Limited supply, so message us to confirm before you order.</p><p class="ship-line"><b>We ship nationwide</b> by J&amp;T Express (up to 50 kg a parcel). Pay by GCash or bank transfer; the shipping fee is quoted before we send.</p></div>
+        <div class="table-wrap" role="region" tabindex="0" aria-label="Mounting kit prices"><table><thead><tr><th scope="col">Item</th><th scope="col">Price</th></tr></thead><tbody><tr><th scope="row">Aluminium rail<small>2.4 m, 1.15 mm thick</small></th><td>₱485</td></tr><tr><th scope="row">Rail connector<small>150 × 11 × 42 mm</small></th><td>₱68</td></tr><tr><th scope="row">Mid clamp<small>for 30–35 mm panels</small></th><td>₱38</td></tr><tr><th scope="row">End clamp<small>for 30–33 mm panels</small></th><td>₱38</td></tr><tr><th scope="row">L-foot<small>with TEK screw</small></th><td>₱68</td></tr><tr><th scope="row">Grounding lug<small>18 mm</small></th><td>₱39</td></tr><tr><th scope="row">Grounding clip<small>32 × 30.1 × 1 mm</small></th><td>₱7</td></tr></tbody></table></div>
+      </div>
+    </div>
   </section>
 
   <section class="breather" aria-label="Free crimping">
@@ -425,6 +456,8 @@ document.addEventListener('click', function (e) {
         <figure class="tall rise"><img src="../assets/warehouse-640.webp" srcset="../assets/warehouse-640.webp 640w, ../assets/warehouse.webp 864w" sizes="(min-width:860px) 300px, 100vw" width="864" height="1080" loading="lazy" alt="Pallets of boxed Luckener hybrid inverters in the warehouse"><figcaption class="mono">Inverters by the pallet</figcaption></figure>
         <figure class="rise"><img src="../assets/install-800.webp" width="800" height="800" loading="lazy" alt="A customer gives a thumbs up beside a newly installed inverter and battery"><figcaption class="mono">A home setup</figcaption></figure>
         <figure class="rise"><img src="../assets/seminar-900.webp" width="900" height="600" loading="lazy" alt="The House of Solar team at a Luckener technical seminar"><figcaption class="mono">Luckener seminar</figcaption></figure>
+        <figure class="rise"><img src="../assets/pickup-truck-720.webp" width="720" height="720" loading="lazy" alt="A customer and staff member with solar panels strapped to a pickup truck"><figcaption class="mono">Loaded and ready</figcaption></figure>
+        <figure class="rise"><img src="../assets/install2-640.webp" width="640" height="800" loading="lazy" style="object-position:50% 25%" alt="Two smiling customers beside a wall-mounted Luckener inverter, breaker box and battery"><figcaption class="mono">Another home setup</figcaption></figure>
         <div class="warranty rise"><b id="yrs">10</b><p>year replacement warranty<small>on Luckener inverters. House of Solar is a direct distributor.</small></p></div>
       </div>
     </div>
@@ -444,6 +477,7 @@ document.addEventListener('click', function (e) {
                 <option value="inverter" data-say="a hybrid inverter">Hybrid inverter</option>
                 <option value="battery" data-say="a battery">Battery</option>
                 <option value="mounting" data-say="a mounting kit">Mounting kit</option>
+                <option value="pump" data-say="a solar water pump">Solar water pump</option>
                 <option value="cables" data-say="cables and connectors">Cables &amp; connectors</option>
                 <option value="unsure" data-say="solar (not sure yet what we need)">Not sure yet</option>
               </select>
@@ -488,9 +522,11 @@ document.addEventListener('click', function (e) {
         </div>
         <div class="tb-info">
           <div class="cell logo-cell"><img src="../assets/logo-256.webp" width="256" height="256" alt=""><b>House of Solar<br>Davao</b></div>
-          <div class="cell"><span class="mono">Shop</span><address>Davao-Bukidnon Road, Catalunan Pequeño, Talomo, Davao City</address><a class="v" href="https://maps.app.goo.gl/4SUnkpNkTWq9NX2J6" target="_blank" rel="noopener" style="color:var(--red);font-size:15px">Get directions →</a></div>
+          <div class="cell"><span class="mono">Shop</span><address>Davao-Bukidnon Road, Catalunan Pequeño, Talomo, Davao City</address><span style="color:var(--muted);font-size:14px">After City College of Davao, across Ivory Tire Trading</span><a class="v" href="https://maps.app.goo.gl/4SUnkpNkTWq9NX2J6" target="_blank" rel="noopener" style="color:var(--red);font-size:15px">Get directions →</a></div>
           <div class="cell"><span class="mono">Call or text</span><a class="v" href="tel:+639100947620">0910 094 7620</a></div>
-          <div class="cell"><span class="mono">Products, service &amp; reservation</span><a class="v" href="tel:+639100947621">0910 094 7621</a></div>
+          <div class="cell"><span class="mono">Orders &amp; inquiries</span><a class="v" href="tel:+639100947621">0910 094 7621</a></div>
+          <div class="cell"><span class="mono">Store hours</span><span style="font-size:17px;font-weight:600">Mon to Sat, 8:00 AM to 5:00 PM</span></div>
+          <div class="cell"><span class="mono">Shipping</span><span style="font-weight:600">Nationwide by J&amp;T Express · GCash or bank transfer</span></div>
           <div class="cell"><span class="mono">Email</span><a class="v" href="mailto:houseofsolar13@gmail.com">houseofsolar13@gmail.com</a></div>
           <div class="cell"><span class="mono">Messenger</span><a class="v" href="https://m.me/houseofsolardavao" target="_blank" rel="noopener">Message us</a></div>
         </div>
@@ -498,7 +534,7 @@ document.addEventListener('click', function (e) {
     </div>
     <footer>
       <div class="wrap">
-        <span>© <span id="yr">2026</span> House of Solar Davao · <a href="https://www.facebook.com/houseofsolardavao/" target="_blank" rel="noopener">Facebook</a></span>
+        <span>© <span id="yr">2026</span> House of Solar Davao · Go Solar. Save More. · <a href="https://www.facebook.com/houseofsolardavao/" target="_blank" rel="noopener">Facebook</a></span>
         <a class="optlink" href="../">← See Option A</a>
         <span>Concept website. <a href="https://kendamin.github.io/" target="_blank" rel="noopener">Watermark by Ken Abuda</a></span>
       </div>
@@ -528,6 +564,7 @@ document.addEventListener('click', function (e) {
           <option value="inverter" data-say="a hybrid inverter">Hybrid inverter</option>
           <option value="battery" data-say="a battery">Battery</option>
           <option value="mounting" data-say="a mounting kit">Mounting kit</option>
+          <option value="pump" data-say="a solar water pump">Solar water pump</option>
           <option value="cables" data-say="cables and connectors">Cables &amp; connectors</option>
           <option value="unsure" data-say="solar (not sure yet what we need)">Not sure yet</option>
         </select>
