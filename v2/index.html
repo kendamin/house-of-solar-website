@@ -9,6 +9,7 @@
 <meta name="theme-color" content="#F3EFE8">
 <link rel="icon" href="../assets/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" as="image" href="assets/stage1-800.webp" imagesrcset="assets/stage1-800.webp 800w, assets/stage1-1280.webp 1280w" imagesizes="(min-width:1240px) 1240px, 100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -61,27 +62,24 @@
   .strip .btn{min-height:42px;padding:8px 18px;font-size:15px}
   @media (min-width:960px){.sheets{display:flex}}
 
-  /* hero: four planes. sky plate, sun, the giant word, the house (occludes the word), front power line */
+  /* hero: three planes from one AI photo. sky plate, the giant word, the house cut out of the sky (occludes the word) */
   .hero{padding-block:clamp(28px,5vw,56px) 0}
-  .hero-grid{display:grid;gap:20px;align-items:end}
-  @media (min-width:960px){.hero-grid{grid-template-columns:.8fr 1.2fr;gap:40px}}
+  .hero-grid{display:grid;gap:clamp(22px,3vw,36px)}
+  .hero-copy{display:grid;gap:16px}
+  @media (min-width:960px){.hero-copy{grid-template-columns:1.15fr .85fr;gap:48px;align-items:end}}
   .hero h1{font-size:clamp(54px,9.6vw,128px);font-stretch:75%;line-height:.88;letter-spacing:-.025em}
   .hero h1 span{color:var(--red)}
-  .hero .lead{color:#3C3F45}
-  .hero-copy{padding-bottom:clamp(8px,4vw,56px)}
-  .scene{position:relative;aspect-ratio:6/5;border-radius:26px 26px 0 0;overflow:hidden;isolation:isolate;--hp:0;--mx:0;--my:0}
-  @media (min-width:960px){.scene{aspect-ratio:7/6}}
-  .scene > *{position:absolute;pointer-events:none}
-  .plate{inset:0;background:linear-gradient(180deg,#DCE8EE 0%,#EEF0EA 55%,#F6E6D2 100%)}
-  .sun-disc{width:15%;aspect-ratio:1;border-radius:50%;background:var(--red);left:68%;top:16%;transform:translate3d(calc(var(--mx)*-6px),calc(var(--hp)*90px + var(--my)*-4px),0)}
-  .word{left:-2%;right:-2%;top:17%;text-align:center;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(96px,23vw,330px);line-height:.8;letter-spacing:-.04em;color:var(--ink);transform:translate3d(calc(var(--mx)*-10px),calc(var(--hp)*-30px),0)}
-  @media (min-width:960px){.word{font-size:clamp(120px,15.5vw,300px)}}
-  .subject{left:6%;right:6%;bottom:6%;transform:translate3d(calc(var(--mx)*8px),calc(var(--hp)*-8px),0)}
-  .subject img{width:100%}
-  .ground{left:0;right:0;bottom:0;height:calc(6% + 2px);background:var(--paper-2)}
-  .fore{left:-4%;bottom:0;width:30%;transform:translate3d(calc(var(--mx)*18px),calc(var(--hp)*-70px),0)}
-  .fore svg{width:100%;height:auto}
-  .tag-roof{left:50%;top:44%;transform:translate(-50%,0);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+  .hero .lead{color:#3C3F45;margin-top:0}
+  .scene{position:relative;aspect-ratio:3/2;border-radius:26px 26px 0 0;overflow:hidden;isolation:isolate;container-type:inline-size;background:#A9CBE6;--hp:0;--mx:0;--my:0}
+  @media (min-width:760px){.scene{aspect-ratio:16/9}}
+  .scene > div{position:absolute;inset:0;pointer-events:none}
+  .scene picture,.scene img{display:block;width:100%;height:100%}
+  .scene img{object-fit:cover;object-position:54% 50%}
+  .word{display:flex;justify-content:center;align-items:flex-start;padding-top:2.5%;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:21cqi;line-height:.8;letter-spacing:-.04em;color:#fff;text-shadow:0 10px 40px rgba(30,70,120,.25);transform:translate3d(calc(var(--mx)*-14px),calc(var(--hp)*18cqi),0)}
+  @media (min-width:760px){.word{font-size:19.5cqi;padding-top:2%}}
+  .cut{transform:translate3d(calc(var(--mx)*4px),0,0)}
+  .tag-roof{position:absolute;left:50%;top:41%;transform:translate(-50%,0);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+  @media (min-width:760px){.tag-roof{top:33%}}
 
   /* shop rail */
   .shop{padding-block:clamp(72px,10vw,128px) clamp(56px,8vw,96px);border-top:3px solid var(--ink)}
@@ -136,16 +134,12 @@
   .stage .wrap{display:grid;gap:clamp(18px,3vw,48px);align-items:center}
   @media (min-width:960px){.stage .wrap{grid-template-columns:.62fr 1.38fr}}
   .stage-fig{margin:0;position:relative}
-  .stage-svg{width:100%;height:auto;display:block;border-radius:22px;border:1px solid var(--line);
-    --sky:#E6EEF2;--wall:#FBFAF7;--roof:#E4DDD1;--door:#D9CFC0;--win:#BFD3DD;--shrub:#9DB88A;--line:#16181C}
-  .stage-svg .sky{fill:var(--sky)} .stage-svg .sun circle{fill:var(--red)}
-  .stage-svg .wall{fill:var(--wall)} .stage-svg .roof{fill:var(--roof)} .stage-svg .doorf{fill:var(--door)}
-  .stage-svg .win{fill:var(--win)} .stage-svg .shrub{fill:var(--shrub)}
-  .stage-svg .house,.stage-svg .grid,.stage-svg .rails,.stage-svg .inv,.stage-svg .bat{stroke:var(--line)}
-  .stage-svg .pv polygon{fill:#1E2A3B} .stage-svg .pv path{stroke:#45597A;stroke-width:1}
-  .stage-svg .lvl rect{fill:#3BB273}
-  .stage-svg .wire{stroke-dasharray:1;stroke-dashoffset:0}
-  .stage-svg .sun{transform:translate(690px,92px)}
+  .stack{position:relative;aspect-ratio:16/9;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#A9CBE6;transition:border-color .3s}
+  .stack-inner{position:absolute;inset:0;transform-origin:73% 64%}
+  .stack-inner > *{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .stack .s{opacity:0}
+  .stack .s1{opacity:1}
+  .ai-note{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
   .stage-cap{position:absolute;left:14px;top:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
   .stage h2{font-size:clamp(34px,4.6vw,64px)}
   .steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:2px;counter-reset:s}
@@ -158,7 +152,8 @@
   .stage.dusk{background:var(--night);color:#EDEAE4}
   .stage.dusk .steps p,.stage.dusk .lead{color:#A9ACB3}
   .stage.dusk .steps li{border-color:rgba(255,255,255,.14)}
-  .stage.dusk .stage-svg{border-color:rgba(255,255,255,.14)}
+  .stage.dusk .stack{border-color:rgba(255,255,255,.14)}
+  .stage.dusk .ai-note{color:#8E9198}
   @media (max-width:959px){
     .install{height:380svh}
     .stage{padding-top:76px;align-content:start}
@@ -178,7 +173,7 @@
   .cmp-head{display:grid;gap:12px}
   @media (min-width:900px){.cmp-head{grid-template-columns:1fr auto;align-items:end}}
   .cmp{position:relative;margin-top:36px;border-radius:22px;overflow:hidden;--x:50%;touch-action:pan-y}
-  .cmp img{width:100%;aspect-ratio:8/5;object-fit:cover}
+  .cmp img{width:100%;aspect-ratio:16/9;object-fit:cover}
   .cmp .before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--x)) 0 0)}
   .cmp .before img{height:100%}
   .cmp .bar{position:absolute;top:0;bottom:0;left:var(--x);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
@@ -314,20 +309,19 @@ document.addEventListener('click', function (e) {
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <h1>Solar, from the <span>roof down.</span></h1>
-        <p class="lead">Davao's one-stop solar shop. Panels, hybrid inverters, batteries and mounting kits in stock in Catalunan Pequeño, and a team that installs them.</p>
-        <div class="cta-row">
-          <button class="btn btn-red" type="button" data-quote>Get a free quote</button>
-          <a class="btn btn-ghost" href="https://m.me/houseofsolardavao" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>Message us</a>
+        <div>
+          <p class="lead">Davao's one-stop solar shop. Panels, hybrid inverters, batteries and mounting kits in stock in Catalunan Pequeño, and a team that installs them.</p>
+          <div class="cta-row">
+            <button class="btn btn-red" type="button" data-quote>Get a free quote</button>
+            <a class="btn btn-ghost" href="https://m.me/houseofsolardavao" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>Message us</a>
+          </div>
         </div>
       </div>
       <div class="scene" id="scene" aria-hidden="true">
-        <div class="plate"></div>
-        <div class="sun-disc"></div>
+        <div class="plate"><img src="assets/stage1-800.webp" srcset="assets/stage1-800.webp 800w, assets/stage1-1280.webp 1280w" sizes="(min-width:1240px) 1240px, 100vw" width="1280" height="720" alt="" fetchpriority="high"></div>
         <div class="word">SOLAR</div>
-        <div class="ground"></div>
-        <div class="subject"><img src="assets/house-hero.svg" width="560" height="330" alt="" fetchpriority="high"></div>
+        <div class="cut"><img src="assets/house-cut-800.webp" srcset="assets/house-cut-800.webp 800w, assets/house-cut-1280.webp 1280w" sizes="(min-width:1240px) 1240px, 100vw" width="1280" height="720" alt=""></div>
         <span class="tag-roof mono">This roof is empty</span>
-        <div class="fore"><svg viewBox="0 0 120 260" fill="none" stroke="#16181C" stroke-width="5" stroke-linecap="round"><path d="M60 260V30M28 50h64M36 70h48"/><path d="M28 50Q-10 70-40 64M92 50Q140 84 190 92" stroke-width="2.4"/></svg></div>
       </div>
     </div>
   </section>
@@ -422,8 +416,15 @@ document.addEventListener('click', function (e) {
           <div class="cta-row"><button class="btn btn-red" type="button" data-quote="setup">Get a free quote</button></div>
         </div>
         <figure class="stage-fig">
-          <svg class="stage-svg" viewBox="0 0 800 500" role="img" aria-labelledby="stage-t"><title id="stage-t">Drawing of a house: solar rails and panels go on the roof, a wire runs to an inverter and battery on the wall, and at dusk the windows light up</title><rect class="sky" width="800" height="500"/><g class="sun"><circle cx="0" cy="0" r="26"/></g><g class="grid" fill="none" stroke="#16181C" stroke-width="3" stroke-linecap="round"><path d="M70 440V196M46 214h48M52 228h36"/><path class="cable" d="M-10 232Q24 248 50 214M90 214Q132 252 170 270" stroke-width="1.6"/></g><g class="house" stroke="#16181C" stroke-width="3" stroke-linejoin="round"><path class="ground" d="M0 440H800" fill="none"/><rect class="wall" x="170" y="256" width="460" height="184"/><polygon class="roof" points="230,140 570,140 660,262 140,262"/><rect class="doorf" x="248" y="328" width="62" height="112"/><circle cx="298" cy="386" r="3" fill="#16181C" stroke="none"/><rect class="win" x="350" y="306" width="92" height="72"/><rect class="win" x="466" y="306" width="92" height="72"/><path d="M396 306v72M350 342h92M512 306v72M466 342h92" fill="none" stroke-width="2"/><path class="shrub" d="M196 440c-6-26 26-34 30-12 10-16 32-6 26 12z"/><path class="shrub" d="M574 440c-4-22 22-28 26-10 8-12 26-4 22 10z"/></g><g class="rails" fill="none" stroke="#16181C" stroke-width="3" stroke-linecap="round"><path d="M227 163H573"/><path d="M209.3 187H590.7"/><path d="M188.7 215H611.3"/><path d="M171 239H629"/></g><g class="panels" stroke="#0B0F15" stroke-width="1.5"><g class="pv" style="--i:0"><polygon points="247.1,152 294.8,152 272.1,198 213.2,198"/><path d="M230.2 175H283.5"/></g><g class="pv" style="--i:1"><polygon points="298.8,152 346.4,152 335.1,198 276.1,198"/><path d="M287.5 175H340.7"/></g><g class="pv" style="--i:2"><polygon points="350.4,152 398,152 398,198 339.1,198"/><path d="M344.7 175H398"/></g><g class="pv" style="--i:3"><polygon points="402,152 449.6,152 460.9,198 402,198"/><path d="M402 175H455.3"/></g><g class="pv" style="--i:4"><polygon points="453.6,152 501.2,152 523.9,198 464.9,198"/><path d="M459.3 175H512.5"/></g><g class="pv" style="--i:5"><polygon points="505.2,152 552.9,152 586.8,198 527.9,198"/><path d="M516.5 175H569.8"/></g><g class="pv" style="--i:6"><polygon points="208.8,204 269.2,204 246.6,250 174.9,250"/><path d="M191.8 227H257.9"/></g><g class="pv" style="--i:7"><polygon points="273.2,204 333.6,204 322.3,250 250.6,250"/><path d="M261.9 227H327.9"/></g><g class="pv" style="--i:8"><polygon points="337.6,204 398,204 398,250 326.3,250"/><path d="M331.9 227H398"/></g><g class="pv" style="--i:9"><polygon points="402,204 462.4,204 473.7,250 402,250"/><path d="M402 227H468.1"/></g><g class="pv" style="--i:10"><polygon points="466.4,204 526.8,204 549.4,250 477.7,250"/><path d="M472.1 227H538.1"/></g><g class="pv" style="--i:11"><polygon points="530.8,204 591.2,204 625.1,250 553.4,250"/><path d="M542.1 227H608.2"/></g></g><path class="wire" d="M598 248L642 266V318H620M600 348V358" fill="none" stroke="#D7262E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/><g class="inv" stroke="#16181C" stroke-width="2.5"><rect x="580" y="290" width="40" height="58" rx="5" fill="#F7F5F1"/><rect x="588" y="298" width="24" height="14" rx="2" fill="#16181C"/><circle class="led" cx="600" cy="332" r="3.5" fill="#D7262E" stroke="none"/></g><g class="bat" stroke="#16181C" stroke-width="2.5"><rect x="580" y="358" width="40" height="72" rx="5" fill="#F7F5F1"/><g class="lvl" stroke="none"><rect class="b0" x="588" y="414" width="24" height="10" rx="2"/><rect class="b1" x="588" y="400" width="24" height="10" rx="2"/><rect class="b2" x="588" y="386" width="24" height="10" rx="2"/><rect class="b3" x="588" y="372" width="24" height="10" rx="2"/></g></g></svg>
+          <div class="stack"><div class="stack-inner" id="stack">
+            <img class="s s1" src="assets/stage1-800.webp" srcset="assets/stage1-800.webp 800w, assets/stage1-1280.webp 1280w" sizes="(min-width:960px) 58vw, 100vw" width="1280" height="720" loading="lazy" alt="Photo-style illustration of a Davao house: the roof goes from bare, to mounting rails, to solar panels with an inverter and battery in the carport, then the house lights up at dusk">
+            <img class="s s2" src="assets/stage2-800.webp" srcset="assets/stage2-800.webp 800w, assets/stage2-1280.webp 1280w" sizes="(min-width:960px) 58vw, 100vw" width="1280" height="720" loading="lazy" alt="">
+            <img class="s s3" src="assets/stage3-800.webp" srcset="assets/stage3-800.webp 800w, assets/stage3-1280.webp 1280w" sizes="(min-width:960px) 58vw, 100vw" width="1280" height="720" loading="lazy" alt="">
+            <img class="s s4" src="assets/stage4-800.webp" srcset="assets/stage4-800.webp 800w, assets/stage4-1280.webp 1280w" sizes="(min-width:960px) 58vw, 100vw" width="1280" height="720" loading="lazy" alt="">
+            <video class="s v" id="duskVid" muted playsinline preload="none" aria-hidden="true"></video>
+          </div></div>
           <figcaption class="stage-cap mono" id="stageCap" aria-hidden="true">Finished setup</figcaption>
+          <p class="ai-note">AI illustration of a typical Davao home, not a House of Solar project.</p>
         </figure>
       </div>
     </div>
@@ -438,13 +439,13 @@ document.addEventListener('click', function (e) {
         </div>
       </div>
       <div class="cmp" id="cmp">
-        <img src="assets/house-after.svg" width="800" height="500" loading="lazy" alt="The house at night with solar panels on the roof, inverter and battery on the wall, and its windows lit">
-        <div class="before"><img src="assets/house-before.svg" width="800" height="500" loading="lazy" alt="The same house by day with a bare roof"></div>
+        <img src="assets/stage4-800.webp" srcset="assets/stage4-800.webp 800w, assets/stage4-1280.webp 1280w" sizes="(min-width:1240px) 1240px, 100vw" width="1280" height="720" loading="lazy" alt="The house at dusk with solar panels on the roof, an inverter and battery in the carport, and its windows lit">
+        <div class="before"><img src="assets/stage1-800.webp" srcset="assets/stage1-800.webp 800w, assets/stage1-1280.webp 1280w" sizes="(min-width:1240px) 1240px, 100vw" width="1280" height="720" loading="lazy" alt="The same house by day with a bare roof"></div>
         <span class="tagl mono">Without</span><span class="tagr mono">With solar</span>
         <input type="range" min="0" max="100" value="50" id="cmpRange" aria-label="Compare: drag to show more of the house with solar">
         <span class="bar"></span><span class="knob" aria-hidden="true">⇆</span>
       </div>
-      <p class="cmp-note">Illustration. Your setup depends on your roof, your bill and the parts you choose.</p>
+      <p class="cmp-note">AI illustration of a typical Davao home. Your setup depends on your roof, your bill and the parts you choose.</p>
     </div>
   </section>
 
@@ -640,31 +641,45 @@ document.getElementById("yr").textContent = new Date().getFullYear();
   const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
   const mix = (a, b, t) => { const A = hex(a), B = hex(b); return "#" + A.map((v, i) => Math.round(v + (B[i] - v) * t).toString(16).padStart(2, "0")).join(""); };
 
-  // ---- Install by scroll (the peak). Scroll position inside #install drives the drawing.
+  // ---- Install by scroll (the peak). Scroll inside #install crossfades the photo stages,
+  // zooms into the carport for the inverter step, then scrubs the dusk clip (desktop) or fades to the dusk photo.
   const sec = document.getElementById("install"), stage = document.getElementById("stage");
-  const svg = stage.querySelector(".stage-svg");
-  const rails = svg.querySelector(".rails"), pvs = [...svg.querySelectorAll(".pv")], wire = svg.querySelector(".wire");
-  const inv = svg.querySelector(".inv"), led = svg.querySelector(".led"), bars = [...svg.querySelectorAll(".lvl rect")].sort((a, b) => b.y.baseVal.value - a.y.baseVal.value);
-  const sun = svg.querySelector(".sun"), steps = [...document.querySelectorAll("#steps li")], cap = document.getElementById("stageCap");
-  const DAY = { sky: "#E6EEF2", wall: "#FBFAF7", roof: "#E4DDD1", door: "#D9CFC0", win: "#BFD3DD", shrub: "#9DB88A", line: "#16181C" };
-  const NIGHT = { sky: "#151A24", wall: "#2B303A", roof: "#3A3F49", door: "#3B3428", win: "#FFC85A", shrub: "#2F4A33", line: "#5B6271" };
+  const inner = document.getElementById("stack"), [s2, s3, s4] = [".s2", ".s3", ".s4"].map(q => inner.querySelector(q));
+  const vid = document.getElementById("duskVid");
+  const steps = [...document.querySelectorAll("#steps li")], cap = document.getElementById("stageCap");
   const LABELS = ["Stage 1 · Rails", "Stage 2 · Panels", "Stage 3 · Inverter & battery", "Stage 4 · Lights on"];
-  let lastIdx = -1;
+  let lastIdx = -1, vidReady = false;
+
+  // the dusk clip (1.7 MB) only loads on wide screens, with motion on and no data saver, as the section gets close
+  const wantVid = matchMedia("(min-width:960px)").matches && !reduce.matches && !(navigator.connection && navigator.connection.saveData);
+  if (wantVid && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => {
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      vid.addEventListener("loadeddata", () => { vidReady = true; onScroll(); }, { once: true });
+      vid.src = "assets/dusk-1280.mp4"; vid.load();
+    }, { rootMargin: "150% 0px" });
+    io.observe(sec);
+  }
 
   function draw(p) {
-    rails.style.opacity = seg(p, .05, .18);
-    pvs.forEach((g, i) => { const t = seg(p, .2 + i * .022, .27 + i * .022); g.style.opacity = t; g.style.transform = `translateY(${(1 - t) * -26}px)`; });
-    wire.style.strokeDashoffset = 1 - seg(p, .52, .62);
-    inv.style.opacity = seg(p, .55, .62);
-    led.style.fill = p > .62 ? "#3BB273" : "#D7262E";
-    bars.forEach((b, k) => { b.style.opacity = seg(p, .63 + k * .035, .66 + k * .035); });
+    s2.style.opacity = seg(p, .08, .18);
+    s3.style.opacity = seg(p, .3, .4);
+    const zoom = seg(p, .5, .6) * (1 - seg(p, .68, .76));
+    inner.style.transform = `scale(${(1 + .04 * p + .75 * zoom).toFixed(4)})`;
+    const useVid = vidReady && !reduce.matches;
     const d = seg(p, .78, .93);
-    for (const k in DAY) svg.style.setProperty("--" + k, mix(DAY[k], NIGHT[k], d));
-    const u = .25 + .75 * p;
-    sun.style.transform = `translate(${100 + 620 * u}px,${440 - 340 * Math.sin(Math.PI * u)}px)`;
-    sun.style.opacity = 1 - d;
+    if (useVid) {
+      vid.style.opacity = seg(p, .76, .78);
+      const t = seg(p, .78, .95) * (vid.duration || 6);
+      if (Math.abs(vid.currentTime - t) > .03) vid.currentTime = t;
+      s4.style.opacity = 0;
+    } else {
+      vid.style.opacity = 0;
+      s4.style.opacity = d;
+    }
     stage.classList.toggle("dusk", d > .5);
-    const idx = p < .2 ? 0 : p < .5 ? 1 : p < .76 ? 2 : 3;
+    const idx = p < .28 ? 0 : p < .48 ? 1 : p < .76 ? 2 : 3;
     if (idx !== lastIdx) {
       steps.forEach((li, i) => { li.classList.toggle("on", i === idx); li.classList.toggle("done", i < idx); });
       cap.textContent = LABELS[idx]; lastIdx = idx;
