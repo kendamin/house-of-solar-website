@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>House of Solar Davao · Solar panels, inverters, batteries and installation</title>
+<meta name="description" content="Solar panels, hybrid inverters, batteries and mounting kits in stock on Davao-Bukidnon Road, Catalunan Pequeño, Davao City, plus an installation team. Direct distributor of Luckener.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F7F5F1">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" as="image" href="assets/warehouse-640.webp" imagesrcset="assets/warehouse-640.webp 640w, assets/warehouse.webp 864w" imagesizes="(min-width:900px) 44vw, 100vw" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/dialogs.css">
+<style>
+  :root{
+    --paper:#F7F5F1; --card:#FFFFFF; --ink:#141517; --muted:#5E6167; --line:#E2DED7;
+    --red:#D7262E; --red-deep:#B51C23; --night:#141619; --night-2:#1D2024;
+    --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+    --text:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --r:20px; --gutter:clamp(16px,4vw,40px);
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--text);overflow-x:clip}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-underline-offset:3px}
+  h1,h2,h3{font-family:var(--display);font-weight:800;font-stretch:80%;letter-spacing:-.01em;line-height:1;margin:0;text-wrap:balance}
+  p{margin:0;text-wrap:pretty}
+  ::selection{background:var(--red);color:#fff}
+  :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+  .skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700}
+  .skip:focus{top:12px}
+  .wrap{width:min(1200px,100% - 2*var(--gutter));margin-inline:auto}
+  section{padding-block:clamp(64px,10vw,120px)}
+  .kicker{display:inline-flex;align-items:center;gap:8px;color:var(--red);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:12.5px;margin-bottom:14px}
+  .kicker::before{content:"";width:18px;height:2px;background:currentColor}
+  .h2{font-size:clamp(38px,6.4vw,72px)}
+  .lead{color:var(--muted);font-size:clamp(16px,1.9vw,19px);max-width:58ch;margin-top:16px}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:12px 22px;border-radius:999px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font:inherit;font-weight:700;font-size:16px;transition:background-color .15s,color .15s,border-color .15s,transform .12s}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-ghost{border-color:#CFCAC1;color:var(--ink);background:transparent}
+  .btn:active{transform:translateY(1px)}
+  @media (hover:hover) and (pointer:fine){
+    .btn-red:hover{background:var(--red-deep)}
+    .btn-dark:hover{background:#2A2C30}
+    .btn-ghost:hover{border-color:var(--ink)}
+  }
+
+  /* header */
+  .top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+  .top .wrap{display:flex;align-items:center;gap:18px;min-height:68px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+  .brand img{width:40px;height:40px;border-radius:50%}
+  .brand b{font-family:var(--display);font-weight:800;font-stretch:85%;font-size:20px;line-height:1}
+  .brand small{display:block;font-family:var(--text);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .nav{display:none;gap:26px}
+  .nav a{text-decoration:none;color:var(--muted);font-weight:600;font-size:15px}
+  .nav a:hover{color:var(--ink)}
+  .top .btn{min-height:42px;padding:8px 18px;font-size:15px}
+  @media (min-width:900px){.nav{display:flex}}
+  @supports (animation-timeline: scroll()){
+    .top{animation:edge linear both;animation-timeline:scroll();animation-range:0 80px}
+    @keyframes edge{to{border-bottom-color:var(--line)}}
+  }
+
+  /* hero */
+  .hero{padding-block:clamp(28px,5vw,64px) clamp(56px,8vw,96px)}
+  .hero-grid{display:grid;gap:clamp(28px,5vw,64px);align-items:center}
+  @media (min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+  .hero h1{font-size:clamp(48px,9.2vw,112px);font-stretch:75%;line-height:.92;letter-spacing:-.02em}
+  .hero h1 em{font-style:normal;color:var(--red)}
+  .hero .lead{font-size:clamp(17px,2vw,20px);color:#3D4046}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .hero-photo{position:relative;margin:0}
+  .hero-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:28px}
+  .hero-photo figcaption{position:absolute;left:16px;right:16px;bottom:16px;display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-radius:16px;padding:14px 16px;box-shadow:0 14px 40px rgba(0,0,0,.18)}
+  .hero-photo figcaption b{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:44px;line-height:.9;color:var(--red)}
+  .hero-photo figcaption span{font-size:14px;line-height:1.35;font-weight:600}
+  .hero-photo figcaption small{display:block;color:var(--muted);font-weight:500}
+  .sun{position:absolute;top:-18px;right:-14px;width:88px;height:88px;color:var(--red)}
+  @media (max-width:899px){.hero-photo img{aspect-ratio:5/4}.sun{width:64px;height:64px;top:-14px;right:-6px}}
+
+  /* brands */
+  .brands{padding-block:0}
+  .brands .wrap{border-block:1px solid var(--line);padding-block:22px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 34px}
+  .brands p{font-size:13px;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+  .brands ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 30px}
+  .brands li{font-family:var(--display);font-weight:700;font-stretch:90%;font-size:clamp(19px,2.2vw,24px);color:#2B2D31}
+
+  /* products */
+  .prod-grid{display:grid;gap:14px;margin-top:40px;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))}
+  .prod{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px 22px;display:grid;gap:10px;align-content:start;transition:border-color .2s,transform .2s}
+  .prod .ic{width:52px;height:52px;border-radius:14px;background:#FBE9EA;color:var(--red);display:grid;place-items:center;margin-bottom:8px}
+  .prod .ic svg{width:28px;height:28px}
+  .prod h3{font-size:30px;font-stretch:80%}
+  .prod p{color:var(--muted);font-size:15.5px}
+  .prod .ask{margin-top:8px;justify-self:start;background:none;border:0;padding:6px 0;font:inherit;font-weight:700;font-size:15px;color:var(--ink);cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+  .prod .ask::after{content:"";position:absolute;inset:0;border-radius:var(--r)}
+  .prod .ask span{color:var(--red);transition:transform .2s}
+  @media (hover:hover) and (pointer:fine){
+    .prod:hover{border-color:#C9C3B9;transform:translateY(-2px)}
+    .prod:hover .ask span{transform:translateX(4px)}
+  }
+  .prod.feature{background:var(--night);color:#F2F0EC;border-color:var(--night)}
+  .prod.feature .ic{background:var(--red);color:#fff}
+  .prod.feature p{color:#B7B9BE}
+  .prod.feature .ask{color:#fff}
+  .tag{justify-self:start;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--red);color:#fff;border-radius:999px;padding:4px 10px}
+  .note{margin-top:18px;color:var(--muted);font-size:14px}
+
+  /* crimping band */
+  .band{background:var(--red);color:#fff;padding-block:clamp(40px,6vw,64px)}
+  .band .wrap{display:grid;gap:20px;align-items:center}
+  @media (min-width:860px){.band .wrap{grid-template-columns:1fr auto}}
+  .band h2{font-size:clamp(34px,5.4vw,60px);font-stretch:75%}
+  .band p{margin-top:10px;font-size:17px;opacity:.92;max-width:56ch}
+  .band .btn{background:#fff;color:var(--red)}
+
+  /* install */
+  .install{background:var(--night);color:#F2F0EC}
+  .install .lead{color:#B7B9BE}
+  .install .kicker{color:#FF6A70}
+  .inst-grid{display:grid;gap:clamp(28px,5vw,64px);align-items:center}
+  @media (min-width:900px){.inst-grid{grid-template-columns:.9fr 1.1fr}}
+  .inst-photo{margin:0;position:relative}
+  .inst-photo img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:28px}
+  .inst-photo figcaption{margin-top:12px;color:#8E9096;font-size:14px}
+  .steps{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:0;counter-reset:s}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:4px 14px;padding:20px 0;border-top:1px solid #30333A}
+  .steps li:last-child{border-bottom:1px solid #30333A}
+  .steps li::before{content:"0" counter(s);grid-row:span 2;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:36px;line-height:1;color:#FF6A70}
+  .steps b{font-size:18px}
+  .steps p{color:#B7B9BE;font-size:15.5px}
+  .install .btn-ghost{color:#fff;border-color:#4A4D55}
+  @media (hover:hover) and (pointer:fine){.install .btn-ghost:hover{border-color:#fff}}
+
+  /* stock gallery */
+  .gal{display:grid;gap:12px;margin-top:40px;grid-template-columns:repeat(2,1fr)}
+  .gal figure{margin:0;position:relative;border-radius:18px;overflow:hidden;background:#E9E5DE}
+  .gal img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+  .gal figcaption{position:absolute;left:10px;bottom:10px;background:rgba(20,21,23,.78);color:#fff;font-size:13px;font-weight:600;border-radius:999px;padding:5px 11px}
+  .gal .wide{grid-column:span 2}
+  .gal .wide img{aspect-ratio:960/397}
+  @media (max-width:859px){.gal .m-wide{grid-column:span 2}.gal .m-wide img{aspect-ratio:3/2}}
+  @media (min-width:860px){
+    .gal{grid-template-columns:repeat(4,1fr)}
+    .gal .tall{grid-row:span 2}
+    .gal .tall img{aspect-ratio:auto;height:100%}
+  }
+
+  /* visit */
+  .visit-grid{display:grid;gap:16px;margin-top:40px}
+  @media (min-width:900px){.visit-grid{grid-template-columns:1.2fr 1fr}}
+  .vcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;display:grid;gap:18px;align-content:start}
+  .vcard address{font-style:normal;font-size:19px;line-height:1.5;font-weight:600}
+  .vcard dl{margin:0;display:grid;gap:14px}
+  .vcard dt{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .vcard dd{margin:2px 0 0;font-size:17px;font-weight:600}
+  .vcard dd a{text-decoration:none}
+  .vcard dd a:hover{text-decoration:underline}
+  .vcard .muted{color:var(--muted);font-weight:500;font-size:15px}
+  .vcard .cta-row{margin-top:0}
+
+  footer{border-top:1px solid var(--line);padding:36px 0 40px;color:var(--muted);font-size:14px}
+  footer .wrap{display:grid;gap:14px}
+  footer .row{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
+  footer a{color:var(--ink)}
+  .compare{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:600;background:var(--card)}
+
+  /* phone action bar */
+  .mbar{display:none}
+  @media (max-width:760px){
+    .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+    .mbar > *{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 4px;font-size:13px;font-weight:700;text-decoration:none;border:0;background:none;color:inherit;font-family:inherit;cursor:pointer}
+    .mbar > :first-child{background:var(--red);color:#fff}
+    .mbar svg{width:20px;height:20px}
+    footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+    .top .btn{display:none}
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    html{scroll-behavior:smooth}
+    @supports (animation-timeline: view()){
+      .reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+      @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+    }
+    .sun .rays{transform-origin:50% 50%;animation:spin 40s linear infinite}
+    @keyframes spin{to{transform:rotate(1turn)}}
+  }
+</style>
+<!-- GoatCounter: counts visits and Message/Call/Book taps (dashboard: kenabuda.goatcounter.com) -->
+<script data-goatcounter="https://kenabuda.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+document.addEventListener('click', function (e) {
+  var el = e.target.closest && e.target.closest('a, button');
+  if (!el || !window.goatcounter || !window.goatcounter.count) return;
+  var href = (el.getAttribute('href') || '').toLowerCase();
+  var text = (el.textContent || '').trim().toLowerCase();
+  var kind =
+    /^fb-messenger:|m\.me\/|messenger\.com/.test(href) ? 'Message' :
+    /^tel:/.test(href) ? 'Call' :
+    /^sms:/.test(href) ? 'Text' :
+    /wa\.me\//.test(href) ? 'WhatsApp' :
+    /google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|maps\.google/.test(href) ? 'Directions' :
+    /shopee\.|lazada\./.test(href) ? 'Shop' :
+    /instagram\.com/.test(href) ? 'Instagram' :
+    /facebook\.com/.test(href) ? 'Facebook' :
+    /book|reserve|trial|inquire|inquiry/.test(text) ? 'Book' :
+    /^message|messenger/.test(text) ? 'Message' : '';
+  if (!kind) return;
+  var site = location.pathname.replace(/index\.html$/, '').replace(/^\/|\/$/g, '') || 'home';
+  var popup = el.closest('dialog') ? ' (popup)' : '';
+  window.goatcounter.count({ path: site + ': ' + kind + popup, title: text.slice(0, 60), event: true });
+}, true);
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="House of Solar Davao, back to top">
+      <img src="assets/logo-256.webp" width="256" height="256" alt="">
+      <span><b>House of Solar</b><small>Davao City</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="#install">Installation</a>
+      <a href="#stock">Stock</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="btn btn-red" type="button" data-quote>Get a free quote</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">Solar supply &amp; installation · Davao City</p>
+        <h1>Your solar setup, <em>all in one shop.</em></h1>
+        <p class="lead">Panels, hybrid inverters, batteries and mounting kits in stock on Davao-Bukidnon Road, plus an installation team to put it all together.</p>
+        <div class="cta-row">
+          <button class="btn btn-red" type="button" data-quote>Get a free quote</button>
+          <a class="btn btn-ghost" href="https://m.me/houseofsolardavao" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>Message us</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="assets/warehouse-640.webp" srcset="assets/warehouse-640.webp 640w, assets/warehouse.webp 864w" sizes="(min-width:900px) 44vw, 100vw" width="864" height="1080" alt="Pallets of boxed Luckener hybrid inverters lined up in the House of Solar warehouse" fetchpriority="high">
+        <svg class="sun" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="17" fill="currentColor"/><g class="rays" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M50 8v12M50 80v12M8 50h12M80 50h12M20 20l8.5 8.5M71.5 71.5 80 80M20 80l8.5-8.5M71.5 28.5 80 20"/></g></svg>
+        <figcaption><b>10</b><span>year replacement warranty<small>on Luckener, direct distributor</small></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="brands" aria-label="Brands we carry">
+    <div class="wrap">
+      <p>Brands on our shelves</p>
+      <ul>
+        <li>Luckener</li><li>Growatt</li><li>Huawei</li><li>TW Solar</li><li>Seraphim</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <p class="kicker">Products</p>
+      <h2 class="h2">Everything for the system, under one roof.</h2>
+      <p class="lead">Buy the parts for your own build, or the whole set with installation. Prices change with stock, so message us for today's price.</p>
+      <div class="prod-grid">
+        <article class="prod feature reveal">
+          <span class="tag">Direct distributor</span>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h3"/><circle cx="15" cy="15" r="2.5"/></svg></div>
+          <h3>Hybrid inverters</h3>
+          <p>Luckener hybrid inverters with a 10-year replacement warranty, plus Growatt and Huawei.</p>
+          <button class="ask" type="button" data-quote="inverter">Ask for the price <span aria-hidden="true">→</span></button>
+        </article>
+        <article class="prod reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 4h14l2 12H3z"/><path d="M4 10h16M9.5 4 9 16M14.5 4l.5 12M12 16v4M8 20h8"/></svg></div>
+          <h3>Solar panels</h3>
+          <p>Panels by pallet or by piece, from brands like TW Solar and Seraphim.</p>
+          <button class="ask" type="button" data-quote="panels">Ask for the price <span aria-hidden="true">→</span></button>
+        </article>
+        <article class="prod reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="7" width="16" height="12" rx="2"/><path d="M19 11h2v4h-2M7 4v3M15 4v3M9 13h4M11 11v4"/></svg></div>
+          <h3>Batteries</h3>
+          <p>Storage batteries, including models with Bluetooth so you can check them on your phone.</p>
+          <button class="ask" type="button" data-quote="battery">Ask for the price <span aria-hidden="true">→</span></button>
+        </article>
+        <article class="prod reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 20 12 5l9 15"/><path d="M6.5 14h11M5 17h14"/></svg></div>
+          <h3>Mounting kits</h3>
+          <p>Rails and mounting kits at friendly prices for roofs and ground setups.</p>
+          <button class="ask" type="button" data-quote="mounting">Ask for the price <span aria-hidden="true">→</span></button>
+        </article>
+        <article class="prod reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 12h5M15 12h5M9 9h6v6H9z"/><path d="M12 4v5M12 15v5"/></svg></div>
+          <h3>Cables &amp; connectors</h3>
+          <p>MC4 connectors, ferrules and battery cables, with free crimping when you buy here.</p>
+          <button class="ask" type="button" data-quote="cables">Ask for the price <span aria-hidden="true">→</span></button>
+        </article>
+        <article class="prod reveal">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-5h6v5"/></svg></div>
+          <h3>Full setup</h3>
+          <p>Not sure what you need? Tell us your bill and where you are, and we'll put together a set.</p>
+          <button class="ask" type="button" data-quote="setup">Get a free quote <span aria-hidden="true">→</span></button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-label="Free crimping">
+    <div class="wrap">
+      <div>
+        <h2>Free crimping, done while you wait.</h2>
+        <p>Buying MC4 connectors, ferrules or battery cables? We crimp them for free at the shop.</p>
+      </div>
+      <a class="btn" href="https://maps.app.goo.gl/4SUnkpNkTWq9NX2J6" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </section>
+
+  <section class="install" id="install">
+    <div class="wrap inst-grid">
+      <figure class="inst-photo reveal">
+        <img src="assets/install-800.webp" width="800" height="800" loading="lazy" alt="A happy customer gives a thumbs up beside a newly installed wall inverter and battery">
+        <figcaption>A home setup by House of Solar: hybrid inverter and battery on the wall.</figcaption>
+      </figure>
+      <div>
+        <p class="kicker">Installation</p>
+        <h2 class="h2">We can install it too.</h2>
+        <p class="lead">House of Solar has its own installation team for homes and businesses around Davao.</p>
+        <ol class="steps">
+          <li><b>Tell us about your place</b><p>Your monthly electric bill, your location, and whether it's a house or a business.</p></li>
+          <li><b>Get a quote</b><p>We suggest a set of panels, inverter and battery that fits, with the price.</p></li>
+          <li><b>We set it up</b><p>Our installation team mounts the panels and wires the system for you.</p></li>
+        </ol>
+        <div class="cta-row">
+          <button class="btn btn-red" type="button" data-quote="setup">Get a free quote</button>
+          <a class="btn btn-ghost" href="tel:+639100947620">Call 0910 094 7620</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stock">
+    <div class="wrap">
+      <p class="kicker">In stock</p>
+      <h2 class="h2">Stock you can see.</h2>
+      <p class="lead">Fresh deliveries come in every week. Message us to check if your item is available before you drive over.</p>
+      <div class="gal">
+        <figure class="tall reveal"><img src="assets/warehouse-640.webp" width="640" height="800" loading="lazy" alt="Long row of pallets stacked with boxed Luckener hybrid inverters"><figcaption>Inverters by the pallet</figcaption></figure>
+        <figure class="reveal"><img src="assets/luckener-boxes-540.webp" width="540" height="405" loading="lazy" alt="Stacked boxes of Luckener hybrid inverters outside the shop"><figcaption>Ready for pickup</figcaption></figure>
+        <figure class="reveal"><img src="assets/stock-540.webp" width="540" height="405" loading="lazy" alt="A wall of boxed solar equipment"><figcaption>New delivery</figcaption></figure>
+        <figure class="reveal"><img src="assets/mounting-800.webp" width="800" height="600" loading="lazy" alt="Bundles of aluminium mounting rails loaded in a van"><figcaption>Mounting rails</figcaption></figure>
+        <figure class="m-wide reveal"><img src="assets/seminar-900.webp" width="900" height="600" loading="lazy" alt="The House of Solar team at a Luckener technical seminar"><figcaption>Luckener technical seminar</figcaption></figure>
+        <figure class="wide reveal"><img src="assets/storefront-960.webp" width="960" height="397" loading="lazy" alt="House of Solar van parked beside a banner showing inverters, batteries and panels"><figcaption>At the shop</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">Visit the shop</p>
+      <h2 class="h2">Find us on Davao-Bukidnon Road.</h2>
+      <div class="visit-grid">
+        <div class="vcard">
+          <address>House of Solar Davao<br>Davao-Bukidnon Road, Catalunan Pequeño<br>Talomo, Davao City</address>
+          <div class="cta-row">
+            <a class="btn btn-red" href="https://maps.app.goo.gl/4SUnkpNkTWq9NX2J6" target="_blank" rel="noopener">Get directions</a>
+            <a class="btn btn-ghost" href="https://m.me/houseofsolardavao" target="_blank" rel="noopener">Message us</a>
+          </div>
+        </div>
+        <div class="vcard">
+          <dl>
+            <div><dt>Call or text</dt><dd><a href="tel:+639100947620">0910 094 7620</a></dd></div>
+            <div><dt>Products, service &amp; reservation</dt><dd><a href="tel:+639100947621">0910 094 7621</a></dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:houseofsolar13@gmail.com">houseofsolar13@gmail.com</a></dd></div>
+            <div><dt>Store hours</dt><dd class="muted">Message us for today's hours.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <a href="https://www.facebook.com/houseofsolardavao/" target="_blank" rel="noopener">Facebook</a>
+      <a href="mailto:houseofsolar13@gmail.com">houseofsolar13@gmail.com</a>
+    </div>
+    <div class="row">
+      <span>© <span id="yr">2026</span> House of Solar Davao</span>
+      <a class="compare" href="v2/">See Option B →</a>
+    </div>
+    <p>Concept website. <a href="https://kendamin.github.io/" target="_blank" rel="noopener">Watermark by Ken Abuda</a></p>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions">
+  <button type="button" data-quote><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>Quote</button>
+  <a href="https://m.me/houseofsolardavao" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>Message</a>
+  <a href="tel:+639100947620"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+  <a href="https://maps.app.goo.gl/4SUnkpNkTWq9NX2J6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Directions</a>
+</nav>
+
+<!--DIALOGS-->
+<dialog class="msg quote-box" id="quoteDialog" closedby="any" aria-labelledby="quote-title">
+  <div class="msg-inner">
+    <div class="msg-head">
+      <div><h2 id="quote-title">Get a free quote</h2><p>Answer a few questions. We'll write the message for you.</p></div>
+      <form method="dialog"><button class="msg-close" aria-label="Close">✕</button></form>
+    </div>
+    <form class="quote-form" aria-labelledby="quote-title">
+      <label for="q-need">What do you need?
+        <select id="q-need" name="need">
+          <option value="setup" data-say="a full solar setup with installation">Full setup with installation</option>
+          <option value="panels" data-say="solar panels">Solar panels</option>
+          <option value="inverter" data-say="a hybrid inverter">Hybrid inverter</option>
+          <option value="battery" data-say="a battery">Battery</option>
+          <option value="mounting" data-say="a mounting kit">Mounting kit</option>
+          <option value="cables" data-say="cables and connectors">Cables &amp; connectors</option>
+          <option value="unsure" data-say="solar (not sure yet what we need)">Not sure yet</option>
+        </select>
+      </label>
+      <fieldset>
+        <legend>For our</legend>
+        <div class="chips">
+          <label><input type="radio" name="site" value="House" checked><span>House</span></label>
+          <label><input type="radio" name="site" value="Business"><span>Business</span></label>
+          <label><input type="radio" name="site" value="Farm"><span>Farm</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="kind-row">
+        <legend>Setup type</legend>
+        <div class="chips">
+          <label><input type="radio" name="kind" value="hybrid (with battery)" checked><span>Hybrid, with battery</span></label>
+          <label><input type="radio" name="kind" value="grid-tie (no battery)"><span>Grid-tie</span></label>
+          <label><input type="radio" name="kind" value="off-grid"><span>Off-grid</span></label>
+        </div>
+        <p class="quote-help">Not sure? Leave it on hybrid and ask us.</p>
+      </fieldset>
+      <div class="quote-row">
+        <label for="q-bill">Monthly electric bill
+          <select id="q-bill" name="bill">
+            <option value="">Skip</option>
+            <option>below ₱2,000</option>
+            <option>₱2,000 to ₱5,000</option>
+            <option>₱5,000 to ₱10,000</option>
+            <option>₱10,000 to ₱20,000</option>
+            <option>above ₱20,000</option>
+          </select>
+        </label>
+        <label for="q-place">Location
+          <input id="q-place" name="place" autocomplete="address-level2" placeholder="e.g. Toril, Davao City">
+        </label>
+      </div>
+      <label for="q-name">Your name <input id="q-name" name="name" autocomplete="name" placeholder="Optional"></label>
+      <p class="quote-preview" aria-live="polite"></p>
+      <button class="btn btn-red" type="submit">Copy &amp; open Messenger</button>
+    </form>
+    <div class="quote-alt">
+      <a class="btn btn-ghost quote-sms" href="sms:+639100947620">Send as text</a>
+      <a class="btn btn-ghost" href="tel:+639100947620">Call us</a>
+    </div>
+    <p class="quote-toast" role="status"></p>
+  </div>
+</dialog>
+
+<dialog class="msg" id="msgDialog" closedby="any" aria-labelledby="msg-title">
+  <div class="msg-inner">
+    <div class="msg-head">
+      <div><h2 id="msg-title">Message House of Solar</h2><p>Ask about prices, stock or installation.</p></div>
+      <form method="dialog"><button class="msg-close" aria-label="Close">✕</button></form>
+    </div>
+    <a class="btn btn-red" id="msgApp" hidden href="fb-messenger://user-thread/100063559015218">Open Messenger app</a>
+    <a class="btn btn-ghost" href="https://m.me/houseofsolardavao" target="_blank" rel="noopener">Message on Facebook</a>
+    <a class="btn btn-ghost" href="tel:+639100947620">Call 0910 094 7620</a>
+    <a class="btn btn-ghost" href="sms:+639100947620">Send a text</a>
+    <div class="msg-note" id="msgNote" hidden>
+      <p>See <strong>"Get the Messenger app"</strong>? Tap <strong>Open in Messenger</strong> below it instead.</p>
+      <p class="msg-note-small">Still not opening? Tap <strong>•••</strong> and choose <strong>Open in browser</strong>.</p>
+    </div>
+  </div>
+</dialog>
+<!--/DIALOGS-->
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

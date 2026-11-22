@@ -1,0 +1,42 @@
+/* Shared popups: Message chooser + Free quote. Pages can override the --d-* colours. */
+.msg{--d-bg:#fff;--d-ink:#141517;--d-muted:#5E6167;--d-line:#E2DED7;--d-field:#F7F5F1;--d-accent:#D7262E;
+  margin:auto;border:1px solid var(--d-line);padding:0;border-radius:20px;width:min(440px,calc(100dvw - 24px));
+  background:var(--d-bg);color:var(--d-ink);box-shadow:0 30px 80px rgba(10,10,12,.35)}
+.msg:modal{overscroll-behavior:contain}
+.msg::backdrop{background:rgba(12,12,14,.62);backdrop-filter:blur(3px);overflow:hidden;overscroll-behavior:contain}
+.msg-inner{padding:24px 22px 22px;display:grid;gap:12px;max-height:calc(100dvh - 24px);overflow:auto}
+.msg-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.msg-head h2{font-size:26px;line-height:1.1;margin:0}
+.msg-head p{color:var(--d-muted);font-size:14px;margin:6px 0 0}
+.msg-head form{flex:none}
+.msg-close{width:40px;height:40px;padding:0;border-radius:50%;border:1px solid var(--d-line);background:var(--d-field);color:var(--d-ink);font-size:17px;font-weight:800;cursor:pointer}
+.msg .btn{justify-content:center;width:100%;touch-action:manipulation}
+.msg-note{font-size:14px;background:var(--d-field);border-left:3px solid var(--d-accent);border-radius:8px;padding:10px 12px;line-height:1.45;display:grid;gap:4px}
+.msg-note p{margin:0}
+.msg-note-small{font-size:12px;color:var(--d-muted)}
+.msg [hidden]{display:none}
+@media (max-width:600px){
+  .msg:modal{margin:auto auto 0;width:100dvw;max-width:100dvw;border-radius:20px 20px 0 0;border-width:1px 0 0}
+  .msg-inner{max-height:92dvh;padding-bottom:max(22px,env(safe-area-inset-bottom))}
+}
+
+/* quote form */
+.quote-form{display:grid;gap:12px}
+.quote-form label{display:grid;gap:5px;font-size:14px;font-weight:700}
+.quote-form select,.quote-form input{font:inherit;font-size:16px;font-weight:500;min-height:46px;padding:10px 12px;border-radius:10px;border:1px solid var(--d-line);background:var(--d-field);color:var(--d-ink);width:100%}
+.quote-form select:focus-visible,.quote-form input:focus-visible{outline:3px solid var(--d-accent);outline-offset:1px}
+.quote-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quote-form fieldset{border:0;margin:0;padding:0;display:grid;gap:6px}
+.quote-form legend{font-size:14px;font-weight:700;padding:0;margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{display:block;font-weight:600}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-flex;align-items:center;min-height:40px;padding:8px 14px;border-radius:999px;border:1px solid var(--d-line);background:var(--d-field);cursor:pointer}
+.chips input:checked+span{background:var(--d-ink);color:var(--d-bg);border-color:var(--d-ink)}
+.chips input:focus-visible+span{outline:3px solid var(--d-accent);outline-offset:2px}
+.quote-help{margin:0;font-size:13px;color:var(--d-muted);font-weight:500}
+.quote-preview{margin:0;font-size:14px;line-height:1.5;background:var(--d-field);border:1px dashed var(--d-line);border-radius:10px;padding:10px 12px}
+.quote-toast{margin:0;font-size:13px;color:#1F8A4C;font-weight:600;min-height:1em}
+.quote-toast:empty{display:none}
+.quote-alt{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quote-box [hidden]{display:none}

@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>House of Solar Davao · Solar, from the roof down</title>
+<meta name="description" content="Davao's one-stop solar shop: panels, hybrid inverters, batteries and mounting kits in stock on Davao-Bukidnon Road, plus an installation team. Direct distributor of Luckener.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F3EFE8">
+<link rel="icon" href="../assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/dialogs.css">
+<style>
+  :root{
+    --paper:#F3EFE8; --paper-2:#EAE4D9; --card:#FBF9F5; --ink:#16181C; --muted:#5C5F66; --line:rgba(22,24,28,.16);
+    --red:#D7262E; --red-deep:#B51C23; --night:#12151C; --glow:#FFC85A;
+    --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+    --text:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --gutter:clamp(16px,4vw,44px); --r:18px;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--text);overflow-x:clip}
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-underline-offset:3px}
+  h1,h2,h3{font-family:var(--display);font-weight:800;font-stretch:78%;letter-spacing:-.015em;line-height:.98;margin:0;text-wrap:balance}
+  p{margin:0;text-wrap:pretty}
+  ::selection{background:var(--red);color:#fff}
+  :focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:6px}
+  .skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700}
+  .skip:focus{top:12px}
+  .wrap{width:min(1240px,100% - 2*var(--gutter));margin-inline:auto}
+  .mono{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+  .h2{font-size:clamp(40px,6.6vw,84px)}
+  .lead{color:var(--muted);font-size:clamp(16px,1.8vw,19px);max-width:52ch;margin-top:16px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 22px;border-radius:999px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font:inherit;font-weight:700;font-size:16px;transition:background-color .15s,color .15s,border-color .15s,transform .12s}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-red{background:var(--red);color:#fff}
+  .btn-ghost{border-color:rgba(22,24,28,.3);color:var(--ink);background:transparent}
+  .btn:active{transform:translateY(1px)}
+  @media (hover:hover) and (pointer:fine){.btn-red:hover{background:var(--red-deep)}.btn-ghost:hover{border-color:var(--ink)}}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+  /* title strip: the nav reads like a drawing sheet's header, sheet letters jump to sections */
+  .strip{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .strip .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+  .brand img{width:36px;height:36px;border-radius:50%}
+  .brand b{font-family:var(--display);font-weight:800;font-stretch:82%;font-size:19px}
+  .sheets{display:none;gap:4px}
+  .sheets a{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14.5px;color:var(--muted)}
+  .sheets a i{font-style:normal;font-family:var(--mono);font-size:11px;width:20px;height:20px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center}
+  .sheets a:hover,.sheets a[aria-current="true"]{color:var(--ink)}
+  .sheets a[aria-current="true"] i{background:var(--red);border-color:var(--red);color:#fff}
+  .strip .btn{min-height:42px;padding:8px 18px;font-size:15px}
+  @media (min-width:960px){.sheets{display:flex}}
+
+  /* hero: four planes. sky plate, sun, the giant word, the house (occludes the word), front power line */
+  .hero{padding-block:clamp(28px,5vw,56px) 0}
+  .hero-grid{display:grid;gap:20px;align-items:end}
+  @media (min-width:960px){.hero-grid{grid-template-columns:.8fr 1.2fr;gap:40px}}
+  .hero h1{font-size:clamp(54px,9.6vw,128px);font-stretch:75%;line-height:.88;letter-spacing:-.025em}
+  .hero h1 span{color:var(--red)}
+  .hero .lead{color:#3C3F45}
+  .hero-copy{padding-bottom:clamp(8px,4vw,56px)}
+  .scene{position:relative;aspect-ratio:6/5;border-radius:26px 26px 0 0;overflow:hidden;isolation:isolate;--hp:0;--mx:0;--my:0}
+  @media (min-width:960px){.scene{aspect-ratio:7/6}}
+  .scene > *{position:absolute;pointer-events:none}
+  .plate{inset:0;background:linear-gradient(180deg,#DCE8EE 0%,#EEF0EA 55%,#F6E6D2 100%)}
+  .sun-disc{width:15%;aspect-ratio:1;border-radius:50%;background:var(--red);left:68%;top:16%;transform:translate3d(calc(var(--mx)*-6px),calc(var(--hp)*90px + var(--my)*-4px),0)}
+  .word{left:-2%;right:-2%;top:17%;text-align:center;font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(96px,23vw,330px);line-height:.8;letter-spacing:-.04em;color:var(--ink);transform:translate3d(calc(var(--mx)*-10px),calc(var(--hp)*-30px),0)}
+  @media (min-width:960px){.word{font-size:clamp(120px,15.5vw,300px)}}
+  .subject{left:6%;right:6%;bottom:6%;transform:translate3d(calc(var(--mx)*8px),calc(var(--hp)*-8px),0)}
+  .subject img{width:100%}
+  .ground{left:0;right:0;bottom:0;height:calc(6% + 2px);background:var(--paper-2)}
+  .fore{left:-4%;bottom:0;width:30%;transform:translate3d(calc(var(--mx)*18px),calc(var(--hp)*-70px),0)}
+  .fore svg{width:100%;height:auto}
+  .tag-roof{left:50%;top:44%;transform:translate(-50%,0);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+
+  /* shop rail */
+  .shop{padding-block:clamp(72px,10vw,128px) clamp(56px,8vw,96px);border-top:3px solid var(--ink)}
+  .shop-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px}
+  .rail-btns{display:none;gap:8px}
+  @media (hover:hover) and (pointer:fine){.rail-btns{display:flex}}
+  .rail-btns button{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(22,24,28,.3);background:none;font-size:20px;cursor:pointer;color:var(--ink)}
+  .rail-btns button:hover{border-color:var(--ink)}
+  .rail{list-style:none;margin:36px 0 0;padding:0 var(--gutter) 8px;display:grid;grid-auto-flow:column;grid-auto-columns:min(82vw,330px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:var(--gutter);overscroll-behavior-x:contain;scrollbar-width:none}
+  .rail::-webkit-scrollbar{display:none}
+  @media (min-width:1328px){.rail{padding-inline:calc((100vw - 1240px)/2)}.rail{scroll-padding-inline:calc((100vw - 1240px)/2)}}
+  .rail li{scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;position:relative}
+  .rail .art{aspect-ratio:4/3;background:var(--paper-2);display:grid;place-items:center;color:var(--ink)}
+  .rail .art img{width:100%;height:100%;object-fit:cover}
+  .rail .art svg{width:46%;height:auto}
+  .label{padding:18px 20px 20px;display:grid;gap:8px;flex:1;align-content:start}
+  .label h3{font-size:30px}
+  .label dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:14.5px}
+  .label dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+  .label dd{margin:0}
+  .label button{margin-top:6px;justify-self:start;background:none;border:0;padding:6px 0;font:inherit;font-weight:700;color:var(--red);cursor:pointer}
+  .label button::after{content:"";position:absolute;inset:0}
+  .label .flag{justify-self:start;background:var(--red);color:#fff;border-radius:999px;padding:3px 10px}
+
+  /* quiet breather */
+  .breather{padding-block:clamp(48px,7vw,80px);background:var(--paper-2)}
+  .breather .wrap{display:grid;gap:18px;align-items:center}
+  @media (min-width:860px){.breather .wrap{grid-template-columns:auto 1fr auto;gap:32px}}
+  .breather .mono{color:var(--red)}
+  .breather p.big{font-family:var(--display);font-weight:700;font-stretch:80%;font-size:clamp(26px,3.4vw,40px);line-height:1.05;max-width:26ch}
+
+  /* PEAK: the install. Sticky drawing, scroll drives --p in JS */
+  .install{position:relative;height:430svh;background:var(--paper)}
+  .stage{position:sticky;top:0;height:100svh;display:grid;align-content:center;gap:18px;padding:84px 0 20px;overflow:hidden;transition:background-color .2s}
+  .stage .wrap{display:grid;gap:clamp(18px,3vw,48px);align-items:center}
+  @media (min-width:960px){.stage .wrap{grid-template-columns:.62fr 1.38fr}}
+  .stage-fig{margin:0;position:relative}
+  .stage-svg{width:100%;height:auto;display:block;border-radius:22px;border:1px solid var(--line);
+    --sky:#E6EEF2;--wall:#FBFAF7;--roof:#E4DDD1;--door:#D9CFC0;--win:#BFD3DD;--shrub:#9DB88A;--line:#16181C}
+  .stage-svg .sky{fill:var(--sky)} .stage-svg .sun circle{fill:var(--red)}
+  .stage-svg .wall{fill:var(--wall)} .stage-svg .roof{fill:var(--roof)} .stage-svg .doorf{fill:var(--door)}
+  .stage-svg .win{fill:var(--win)} .stage-svg .shrub{fill:var(--shrub)}
+  .stage-svg .house,.stage-svg .grid,.stage-svg .rails,.stage-svg .inv,.stage-svg .bat{stroke:var(--line)}
+  .stage-svg .pv polygon{fill:#1E2A3B} .stage-svg .pv path{stroke:#45597A;stroke-width:1}
+  .stage-svg .lvl rect{fill:#3BB273}
+  .stage-svg .wire{stroke-dasharray:1;stroke-dashoffset:0}
+  .stage-svg .sun{transform:translate(690px,92px)}
+  .stage-cap{position:absolute;left:14px;top:14px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+  .stage h2{font-size:clamp(34px,4.6vw,64px)}
+  .steps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:2px;counter-reset:s}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:0 10px;padding:12px 0;border-top:1px solid var(--line);opacity:.42;transition:opacity .25s}
+  .steps li::before{content:"0" counter(s);font-family:var(--mono);font-size:13px;padding-top:3px;color:var(--red)}
+  .steps b{font-size:17px}
+  .steps p{grid-column:2;color:var(--muted);font-size:15px}
+  .steps li.on{opacity:1}
+  .steps li.done{opacity:.6}
+  .stage.dusk{background:var(--night);color:#EDEAE4}
+  .stage.dusk .steps p,.stage.dusk .lead{color:#A9ACB3}
+  .stage.dusk .steps li{border-color:rgba(255,255,255,.14)}
+  .stage.dusk .stage-svg{border-color:rgba(255,255,255,.14)}
+  @media (max-width:959px){
+    .install{height:380svh}
+    .stage{padding-top:76px;align-content:start}
+    .stage h2{font-size:30px}
+    .stage .lead{display:none}
+    .steps{margin-top:10px}
+    .steps li{padding:8px 0}
+    .steps li:not(.on) p{display:none}
+    .stage-fig{order:-1}
+    .stage .cta-row{display:none}
+  }
+  @media (max-width:959px) and (max-height:700px){.steps li:not(.on){display:none}}
+
+  /* compare: before / after drag */
+  .compare{padding-block:clamp(72px,10vw,128px);background:var(--night);color:#EDEAE4}
+  .compare .lead{color:#A9ACB3}
+  .cmp-head{display:grid;gap:12px}
+  @media (min-width:900px){.cmp-head{grid-template-columns:1fr auto;align-items:end}}
+  .cmp{position:relative;margin-top:36px;border-radius:22px;overflow:hidden;--x:50%;touch-action:pan-y}
+  .cmp img{width:100%;aspect-ratio:8/5;object-fit:cover}
+  .cmp .before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--x)) 0 0)}
+  .cmp .before img{height:100%}
+  .cmp .bar{position:absolute;top:0;bottom:0;left:var(--x);width:3px;margin-left:-1.5px;background:#fff;pointer-events:none}
+  .cmp .knob{position:absolute;top:50%;left:var(--x);width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.35);pointer-events:none;font-weight:800}
+  .cmp input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;touch-action:pan-y}
+  .cmp input:focus-visible ~ .knob{outline:3px solid var(--red);outline-offset:3px}
+  .cmp .tagl,.cmp .tagr{position:absolute;top:14px;background:rgba(18,21,28,.8);color:#fff;border-radius:999px;padding:6px 12px;pointer-events:none}
+  .cmp .tagl{left:14px;background:rgba(255,255,255,.9);color:var(--ink)} .cmp .tagr{right:14px}
+  .cmp-note{margin-top:14px;color:#8E9198;font-size:14px}
+
+  /* proof */
+  .proof{padding-block:clamp(72px,10vw,128px)}
+  .proof-grid{display:grid;gap:14px;margin-top:40px;grid-template-columns:repeat(2,1fr)}
+  .proof-grid figure{margin:0;position:relative;border-radius:18px;overflow:hidden;background:var(--paper-2)}
+  .proof-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+  .proof-grid figcaption{position:absolute;left:10px;bottom:10px;background:rgba(22,24,28,.8);color:#fff;border-radius:999px;padding:5px 11px}
+  .warranty{grid-column:span 2;background:var(--red);color:#fff;border-radius:18px;padding:24px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+  .warranty b{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:clamp(88px,12vw,150px);line-height:.85;font-variant-numeric:tabular-nums}
+  .warranty p{font-size:18px;font-weight:600;max-width:22ch}
+  .warranty small{display:block;font-weight:500;opacity:.85;font-size:14px;margin-top:4px}
+  .proof-grid .tall img{aspect-ratio:4/5}
+  @media (max-width:859px){.proof-grid .tall{grid-column:span 2}}
+  @media (min-width:860px){
+    .proof-grid{grid-template-columns:repeat(4,1fr)}
+    .proof-grid .tall{grid-row:span 2}
+    .proof-grid .tall img{aspect-ratio:auto;height:100%}
+  }
+
+  /* close: a drawing title block that is the quote request */
+  .close{padding-block:clamp(72px,10vw,120px) 0;background:var(--paper-2);border-top:3px solid var(--ink)}
+  .close h2{font-size:clamp(44px,7vw,92px)}
+  .tb{margin-top:36px;border:2px solid var(--ink);background:var(--card);display:grid}
+  @media (min-width:960px){.tb{grid-template-columns:1.5fr 1fr}}
+  .tb-form{padding:0;border-bottom:2px solid var(--ink)}
+  @media (min-width:960px){.tb-form{border-bottom:0;border-right:2px solid var(--ink)}}
+  .quote-box.inline{--d-bg:var(--card);--d-ink:var(--ink);--d-muted:var(--muted);--d-line:rgba(22,24,28,.22);--d-field:#fff;--d-accent:var(--red)}
+  .tb .quote-form{gap:0}
+  .tb .cell{padding:14px 18px;border-bottom:1px solid var(--line);display:grid;gap:6px}
+  .tb .cell > span,.tb legend{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+  .tb .cells2{display:grid;grid-template-columns:1fr 1fr}
+  .tb .cells2 .cell + .cell{border-left:1px solid var(--line)}
+  @media (max-width:520px){.tb .cells2{grid-template-columns:1fr}.tb .cells2 .cell + .cell{border-left:0}}
+  .tb .send{padding:16px 18px;display:grid;gap:12px}
+  .tb .quote-alt{padding:0 18px 18px}
+  .tb .quote-toast{padding:0 18px 14px}
+  .tb-info{display:grid;align-content:start}
+  .tb-info .cell{padding:16px 18px;border-bottom:1px solid var(--line);display:grid;gap:4px}
+  .tb-info .cell:last-child{border-bottom:0}
+  .tb-info span.mono{color:var(--muted);font-size:11px}
+  .tb-info address,.tb-info a.v{font-style:normal;font-size:17px;font-weight:600;text-decoration:none}
+  .tb-info a.v:hover{text-decoration:underline}
+  .tb-info .logo-cell{display:flex;align-items:center;gap:12px}
+  .tb-info .logo-cell img{width:56px;height:56px;border-radius:50%}
+  .tb-info .logo-cell b{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:24px;line-height:1}
+  footer{padding:40px 0 44px;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+  footer a{color:var(--ink)}
+  .optlink{display:inline-flex;padding:8px 14px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-weight:600;background:var(--card)}
+
+  .mbar{display:none}
+  @media (max-width:760px){
+    .mbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+    .mbar > *{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 4px;font-size:13px;font-weight:700;text-decoration:none;border:0;background:none;color:inherit;font-family:inherit;cursor:pointer}
+    .mbar > :first-child{background:var(--red);color:#fff}
+    .mbar svg{width:20px;height:20px}
+    footer{padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+    .strip .btn{display:none}
+  }
+
+  /* reduced motion: no pin, no parallax. The drawing shows the finished, lit-up system */
+  @media (prefers-reduced-motion: reduce){
+    .install{height:auto}
+    .stage{position:relative;height:auto;padding-block:72px}
+    .steps li{opacity:1}
+    .steps li p{display:block !important}
+    .steps li{display:grid !important}
+  }
+  @media (prefers-reduced-motion: no-preference){
+    html{scroll-behavior:smooth}
+    @supports (animation-timeline: view()){
+      .rise{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+      @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    }
+  }
+</style>
+<!-- GoatCounter: counts visits and Message/Call/Book taps (dashboard: kenabuda.goatcounter.com) -->
+<script data-goatcounter="https://kenabuda.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script>
+document.addEventListener('click', function (e) {
+  var el = e.target.closest && e.target.closest('a, button');
+  if (!el || !window.goatcounter || !window.goatcounter.count) return;
+  var href = (el.getAttribute('href') || '').toLowerCase();
+  var text = (el.textContent || '').trim().toLowerCase();
+  var kind =
+    /^fb-messenger:|m\.me\/|messenger\.com/.test(href) ? 'Message' :
+    /^tel:/.test(href) ? 'Call' :
+    /^sms:/.test(href) ? 'Text' :
+    /wa\.me\//.test(href) ? 'WhatsApp' :
+    /google\.[a-z.]+\/maps|maps\.app\.goo\.gl|goo\.gl\/maps|maps\.google/.test(href) ? 'Directions' :
+    /shopee\.|lazada\./.test(href) ? 'Shop' :
+    /instagram\.com/.test(href) ? 'Instagram' :
+    /facebook\.com/.test(href) ? 'Facebook' :
+    /book|reserve|trial|inquire|inquiry/.test(text) ? 'Book' :
+    /^message|messenger/.test(text) ? 'Message' : '';
+  if (!kind) return;
+  var site = location.pathname.replace(/index\.html$/, '').replace(/^\/|\/$/g, '') || 'home';
+  var popup = el.closest('dialog') ? ' (popup)' : '';
+  window.goatcounter.count({ path: site + ': ' + kind + popup, title: text.slice(0, 60), event: true });
+}, true);
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="strip">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="House of Solar Davao, back to top">
+      <img src="../assets/logo-256.webp" width="256" height="256" alt="">
+      <b>House of Solar</b>
+    </a>
+    <nav class="sheets" aria-label="Sections">
+      <a href="#shop"><i>A</i>Shop</a>
+      <a href="#install"><i>B</i>Install</a>
+      <a href="#compare"><i>C</i>Compare</a>
+      <a href="#visit"><i>D</i>Visit</a>
+    </nav>
+    <button class="btn btn-red" type="button" data-quote>Get a free quote</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Solar, from the <span>roof down.</span></h1>
+        <p class="lead">Davao's one-stop solar shop. Panels, hybrid inverters, batteries and mounting kits in stock in Catalunan Pequeño, and a team that installs them.</p>
+        <div class="cta-row">
+          <button class="btn btn-red" type="button" data-quote>Get a free quote</button>
+          <a class="btn btn-ghost" href="https://m.me/houseofsolardavao" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>Message us</a>
+        </div>
+      </div>
+      <div class="scene" id="scene" aria-hidden="true">
+        <div class="plate"></div>
+        <div class="sun-disc"></div>
+        <div class="word">SOLAR</div>
+        <div class="ground"></div>
+        <div class="subject"><img src="assets/house-hero.svg" width="560" height="330" alt="" fetchpriority="high"></div>
+        <span class="tag-roof mono">This roof is empty</span>
+        <div class="fore"><svg viewBox="0 0 120 260" fill="none" stroke="#16181C" stroke-width="5" stroke-linecap="round"><path d="M60 260V30M28 50h64M36 70h48"/><path d="M28 50Q-10 70-40 64M92 50Q140 84 190 92" stroke-width="2.4"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop" id="shop" aria-labelledby="shop-h">
+    <div class="wrap shop-head">
+      <div>
+        <h2 class="h2" id="shop-h">One shelf.<br>The whole system.</h2>
+        <p class="lead">Buy the parts for your own build, or the complete set with installation. Prices move with stock, so ask for today's price.</p>
+      </div>
+      <div class="rail-btns"><button type="button" data-dir="-1" aria-label="Previous products">←</button><button type="button" data-dir="1" aria-label="Next products">→</button></div>
+    </div>
+    <ul class="rail" id="rail" aria-label="Products">
+      <li class="rise">
+        <div class="art"><img src="../assets/luckener-boxes-540.webp" width="540" height="405" loading="lazy" alt="Boxed Luckener hybrid inverters stacked at the shop"></div>
+        <div class="label">
+          <span class="flag mono">Direct distributor</span>
+          <h3>Hybrid inverters</h3>
+          <dl><dt>Does</dt><dd>Runs the house from panels, battery and grid.</dd><dt>Brands</dt><dd>Luckener, Growatt, Huawei</dd><dt>Note</dt><dd>10-year replacement warranty on Luckener</dd></dl>
+          <button type="button" data-quote="inverter">Ask for the price →</button>
+        </div>
+      </li>
+      <li class="rise">
+        <div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M5 4h14l2 12H3z"/><path d="M4 10h16M9.5 4 9 16M14.5 4l.5 12M12 16v4M8 20h8"/></svg></div>
+        <div class="label">
+          <h3>Solar panels</h3>
+          <dl><dt>Does</dt><dd>Turns sunlight on your roof into power.</dd><dt>Brands</dt><dd>TW Solar, Seraphim</dd><dt>Sold</dt><dd>By piece or by pallet</dd></dl>
+          <button type="button" data-quote="panels">Ask for the price →</button>
+        </div>
+      </li>
+      <li class="rise">
+        <div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="3" y="7" width="16" height="12" rx="2"/><path d="M19 11h2v4h-2M7 4v3M15 4v3M9 13h4M11 11v4"/></svg></div>
+        <div class="label">
+          <h3>Batteries</h3>
+          <dl><dt>Does</dt><dd>Stores the day's power for the night.</dd><dt>Extra</dt><dd>Models with Bluetooth, check them on your phone</dd></dl>
+          <button type="button" data-quote="battery">Ask for the price →</button>
+        </div>
+      </li>
+      <li class="rise">
+        <div class="art"><img src="../assets/mounting-800.webp" width="800" height="600" loading="lazy" alt="Bundles of aluminium mounting rails in a van"></div>
+        <div class="label">
+          <h3>Mounting kits</h3>
+          <dl><dt>Does</dt><dd>Holds the panels to your roof or frame.</dd><dt>Price</dt><dd>Budget-friendly kits in stock</dd></dl>
+          <button type="button" data-quote="mounting">Ask for the price →</button>
+        </div>
+      </li>
+      <li class="rise">
+        <div class="art"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M4 12h5M15 12h5M9 9h6v6H9z"/><path d="M12 4v5M12 15v5"/></svg></div>
+        <div class="label">
+          <h3>Cables &amp; connectors</h3>
+          <dl><dt>Does</dt><dd>Connects everything safely.</dd><dt>Items</dt><dd>MC4, ferrules, battery cables</dd><dt>Extra</dt><dd>Free crimping at the shop</dd></dl>
+          <button type="button" data-quote="cables">Ask for the price →</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="breather" aria-label="Free crimping">
+    <div class="wrap">
+      <span class="mono">Free at the shop</span>
+      <p class="big">Bring your MC4, ferrule and battery cables. We crimp them for free.</p>
+      <a class="btn btn-ghost" href="https://maps.app.goo.gl/4SUnkpNkTWq9NX2J6" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </section>
+
+  <section class="install" id="install" aria-labelledby="install-h">
+    <div class="stage" id="stage">
+      <div class="wrap">
+        <div>
+          <h2 id="install-h">Watch it go on the roof.</h2>
+          <p class="lead">Our installation team works in this order, for homes and businesses around Davao.</p>
+          <ol class="steps" id="steps">
+            <li><b>Rails</b><p>Mounting rails are fixed to the roof.</p></li>
+            <li><b>Panels</b><p>The panels are set on the rails, row by row.</p></li>
+            <li><b>Inverter &amp; battery</b><p>Wiring runs down to a hybrid inverter and battery on the wall.</p></li>
+            <li><b>Lights on</b><p>When the sun goes down, the battery keeps the house running.</p></li>
+          </ol>
+          <div class="cta-row"><button class="btn btn-red" type="button" data-quote="setup">Get a free quote</button></div>
+        </div>
+        <figure class="stage-fig">
+          <svg class="stage-svg" viewBox="0 0 800 500" role="img" aria-labelledby="stage-t"><title id="stage-t">Drawing of a house: solar rails and panels go on the roof, a wire runs to an inverter and battery on the wall, and at dusk the windows light up</title><rect class="sky" width="800" height="500"/><g class="sun"><circle cx="0" cy="0" r="26"/></g><g class="grid" fill="none" stroke="#16181C" stroke-width="3" stroke-linecap="round"><path d="M70 440V196M46 214h48M52 228h36"/><path class="cable" d="M-10 232Q24 248 50 214M90 214Q132 252 170 270" stroke-width="1.6"/></g><g class="house" stroke="#16181C" stroke-width="3" stroke-linejoin="round"><path class="ground" d="M0 440H800" fill="none"/><rect class="wall" x="170" y="256" width="460" height="184"/><polygon class="roof" points="230,140 570,140 660,262 140,262"/><rect class="doorf" x="248" y="328" width="62" height="112"/><circle cx="298" cy="386" r="3" fill="#16181C" stroke="none"/><rect class="win" x="350" y="306" width="92" height="72"/><rect class="win" x="466" y="306" width="92" height="72"/><path d="M396 306v72M350 342h92M512 306v72M466 342h92" fill="none" stroke-width="2"/><path class="shrub" d="M196 440c-6-26 26-34 30-12 10-16 32-6 26 12z"/><path class="shrub" d="M574 440c-4-22 22-28 26-10 8-12 26-4 22 10z"/></g><g class="rails" fill="none" stroke="#16181C" stroke-width="3" stroke-linecap="round"><path d="M227 163H573"/><path d="M209.3 187H590.7"/><path d="M188.7 215H611.3"/><path d="M171 239H629"/></g><g class="panels" stroke="#0B0F15" stroke-width="1.5"><g class="pv" style="--i:0"><polygon points="247.1,152 294.8,152 272.1,198 213.2,198"/><path d="M230.2 175H283.5"/></g><g class="pv" style="--i:1"><polygon points="298.8,152 346.4,152 335.1,198 276.1,198"/><path d="M287.5 175H340.7"/></g><g class="pv" style="--i:2"><polygon points="350.4,152 398,152 398,198 339.1,198"/><path d="M344.7 175H398"/></g><g class="pv" style="--i:3"><polygon points="402,152 449.6,152 460.9,198 402,198"/><path d="M402 175H455.3"/></g><g class="pv" style="--i:4"><polygon points="453.6,152 501.2,152 523.9,198 464.9,198"/><path d="M459.3 175H512.5"/></g><g class="pv" style="--i:5"><polygon points="505.2,152 552.9,152 586.8,198 527.9,198"/><path d="M516.5 175H569.8"/></g><g class="pv" style="--i:6"><polygon points="208.8,204 269.2,204 246.6,250 174.9,250"/><path d="M191.8 227H257.9"/></g><g class="pv" style="--i:7"><polygon points="273.2,204 333.6,204 322.3,250 250.6,250"/><path d="M261.9 227H327.9"/></g><g class="pv" style="--i:8"><polygon points="337.6,204 398,204 398,250 326.3,250"/><path d="M331.9 227H398"/></g><g class="pv" style="--i:9"><polygon points="402,204 462.4,204 473.7,250 402,250"/><path d="M402 227H468.1"/></g><g class="pv" style="--i:10"><polygon points="466.4,204 526.8,204 549.4,250 477.7,250"/><path d="M472.1 227H538.1"/></g><g class="pv" style="--i:11"><polygon points="530.8,204 591.2,204 625.1,250 553.4,250"/><path d="M542.1 227H608.2"/></g></g><path class="wire" d="M598 248L642 266V318H620M600 348V358" fill="none" stroke="#D7262E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/><g class="inv" stroke="#16181C" stroke-width="2.5"><rect x="580" y="290" width="40" height="58" rx="5" fill="#F7F5F1"/><rect x="588" y="298" width="24" height="14" rx="2" fill="#16181C"/><circle class="led" cx="600" cy="332" r="3.5" fill="#D7262E" stroke="none"/></g><g class="bat" stroke="#16181C" stroke-width="2.5"><rect x="580" y="358" width="40" height="72" rx="5" fill="#F7F5F1"/><g class="lvl" stroke="none"><rect class="b0" x="588" y="414" width="24" height="10" rx="2"/><rect class="b1" x="588" y="400" width="24" height="10" rx="2"/><rect class="b2" x="588" y="386" width="24" height="10" rx="2"/><rect class="b3" x="588" y="372" width="24" height="10" rx="2"/></g></g></svg>
+          <figcaption class="stage-cap mono" id="stageCap" aria-hidden="true">Finished setup</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare" id="compare" aria-labelledby="cmp-h">
+    <div class="wrap">
+      <div class="cmp-head">
+        <div>
+          <h2 class="h2" id="cmp-h">Same house. After dark.</h2>
+          <p class="lead">Drag across to compare a bare roof by day with the finished setup at night.</p>
+        </div>
+      </div>
+      <div class="cmp" id="cmp">
+        <img src="assets/house-after.svg" width="800" height="500" loading="lazy" alt="The house at night with solar panels on the roof, inverter and battery on the wall, and its windows lit">
+        <div class="before"><img src="assets/house-before.svg" width="800" height="500" loading="lazy" alt="The same house by day with a bare roof"></div>
+        <span class="tagl mono">Without</span><span class="tagr mono">With solar</span>
+        <input type="range" min="0" max="100" value="50" id="cmpRange" aria-label="Compare: drag to show more of the house with solar">
+        <span class="bar"></span><span class="knob" aria-hidden="true">⇆</span>
+      </div>
+      <p class="cmp-note">Illustration. Your setup depends on your roof, your bill and the parts you choose.</p>
+    </div>
+  </section>
+
+  <section class="proof" aria-labelledby="proof-h">
+    <div class="wrap">
+      <h2 class="h2" id="proof-h">A real shop, with real stock.</h2>
+      <p class="lead">New deliveries come in every week. Message us to check stock before you drive over.</p>
+      <div class="proof-grid">
+        <figure class="tall rise"><img src="../assets/warehouse-640.webp" srcset="../assets/warehouse-640.webp 640w, ../assets/warehouse.webp 864w" sizes="(min-width:860px) 300px, 100vw" width="864" height="1080" loading="lazy" alt="Pallets of boxed Luckener hybrid inverters in the warehouse"><figcaption class="mono">Inverters by the pallet</figcaption></figure>
+        <figure class="rise"><img src="../assets/install-800.webp" width="800" height="800" loading="lazy" alt="A customer gives a thumbs up beside a newly installed inverter and battery"><figcaption class="mono">A home setup</figcaption></figure>
+        <figure class="rise"><img src="../assets/seminar-900.webp" width="900" height="600" loading="lazy" alt="The House of Solar team at a Luckener technical seminar"><figcaption class="mono">Luckener seminar</figcaption></figure>
+        <div class="warranty rise"><b id="yrs">10</b><p>year replacement warranty<small>on Luckener inverters. House of Solar is a direct distributor.</small></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close" id="visit" aria-labelledby="close-h">
+    <div class="wrap">
+      <h2 id="close-h">Start with your roof.</h2>
+      <p class="lead">Fill in the title block. We'll write the message, you send it on Messenger.</p>
+      <div class="tb">
+        <div class="tb-form quote-box inline">
+          <form class="quote-form" aria-labelledby="close-h">
+            <label class="cell" for="c-need"><span>Project</span>
+              <select id="c-need" name="need">
+                <option value="setup" data-say="a full solar setup with installation">Full setup with installation</option>
+                <option value="panels" data-say="solar panels">Solar panels</option>
+                <option value="inverter" data-say="a hybrid inverter">Hybrid inverter</option>
+                <option value="battery" data-say="a battery">Battery</option>
+                <option value="mounting" data-say="a mounting kit">Mounting kit</option>
+                <option value="cables" data-say="cables and connectors">Cables &amp; connectors</option>
+                <option value="unsure" data-say="solar (not sure yet what we need)">Not sure yet</option>
+              </select>
+            </label>
+            <div class="cells2">
+              <fieldset class="cell"><legend>Site</legend>
+                <div class="chips">
+                  <label><input type="radio" name="site" value="House" checked><span>House</span></label>
+                  <label><input type="radio" name="site" value="Business"><span>Business</span></label>
+                  <label><input type="radio" name="site" value="Farm"><span>Farm</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="cell kind-row"><legend>Setup type</legend>
+                <div class="chips">
+                  <label><input type="radio" name="kind" value="hybrid (with battery)" checked><span>Hybrid</span></label>
+                  <label><input type="radio" name="kind" value="grid-tie (no battery)"><span>Grid-tie</span></label>
+                  <label><input type="radio" name="kind" value="off-grid"><span>Off-grid</span></label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="cells2">
+              <label class="cell" for="c-bill"><span>Monthly electric bill</span>
+                <select id="c-bill" name="bill">
+                  <option value="">Skip</option>
+                  <option>below ₱2,000</option>
+                  <option>₱2,000 to ₱5,000</option>
+                  <option>₱5,000 to ₱10,000</option>
+                  <option>₱10,000 to ₱20,000</option>
+                  <option>above ₱20,000</option>
+                </select>
+              </label>
+              <label class="cell" for="c-place"><span>Location</span><input id="c-place" name="place" autocomplete="address-level2" placeholder="e.g. Toril, Davao City"></label>
+            </div>
+            <label class="cell" for="c-name"><span>Name</span><input id="c-name" name="name" autocomplete="name" placeholder="Optional"></label>
+            <div class="send">
+              <p class="quote-preview" aria-live="polite"></p>
+              <button class="btn btn-red" type="submit">Copy &amp; open Messenger</button>
+            </div>
+          </form>
+          <div class="quote-alt"><a class="btn btn-ghost quote-sms" href="sms:+639100947620">Send as text</a><a class="btn btn-ghost" href="tel:+639100947620">Call us</a></div>
+          <p class="quote-toast" role="status"></p>
+        </div>
+        <div class="tb-info">
+          <div class="cell logo-cell"><img src="../assets/logo-256.webp" width="256" height="256" alt=""><b>House of Solar<br>Davao</b></div>
+          <div class="cell"><span class="mono">Shop</span><address>Davao-Bukidnon Road, Catalunan Pequeño, Talomo, Davao City</address><a class="v" href="https://maps.app.goo.gl/4SUnkpNkTWq9NX2J6" target="_blank" rel="noopener" style="color:var(--red);font-size:15px">Get directions →</a></div>
+          <div class="cell"><span class="mono">Call or text</span><a class="v" href="tel:+639100947620">0910 094 7620</a></div>
+          <div class="cell"><span class="mono">Products, service &amp; reservation</span><a class="v" href="tel:+639100947621">0910 094 7621</a></div>
+          <div class="cell"><span class="mono">Email</span><a class="v" href="mailto:houseofsolar13@gmail.com">houseofsolar13@gmail.com</a></div>
+          <div class="cell"><span class="mono">Messenger</span><a class="v" href="https://m.me/houseofsolardavao" target="_blank" rel="noopener">Message us</a></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="wrap">
+        <span>© <span id="yr">2026</span> House of Solar Davao · <a href="https://www.facebook.com/houseofsolardavao/" target="_blank" rel="noopener">Facebook</a></span>
+        <a class="optlink" href="../">← See Option A</a>
+        <span>Concept website. <a href="https://kendamin.github.io/" target="_blank" rel="noopener">Watermark by Ken Abuda</a></span>
+      </div>
+    </footer>
+  </section>
+</main>
+
+<nav class="mbar" aria-label="Quick actions">
+  <button type="button" data-quote><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>Quote</button>
+  <a href="https://m.me/houseofsolardavao" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>Message</a>
+  <a href="tel:+639100947620"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Call</a>
+  <a href="https://maps.app.goo.gl/4SUnkpNkTWq9NX2J6" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Directions</a>
+</nav>
+
+<!--DIALOGS-->
+<dialog class="msg quote-box" id="quoteDialog" closedby="any" aria-labelledby="quote-title">
+  <div class="msg-inner">
+    <div class="msg-head">
+      <div><h2 id="quote-title">Get a free quote</h2><p>Answer a few questions. We'll write the message for you.</p></div>
+      <form method="dialog"><button class="msg-close" aria-label="Close">✕</button></form>
+    </div>
+    <form class="quote-form" aria-labelledby="quote-title">
+      <label for="q-need">What do you need?
+        <select id="q-need" name="need">
+          <option value="setup" data-say="a full solar setup with installation">Full setup with installation</option>
+          <option value="panels" data-say="solar panels">Solar panels</option>
+          <option value="inverter" data-say="a hybrid inverter">Hybrid inverter</option>
+          <option value="battery" data-say="a battery">Battery</option>
+          <option value="mounting" data-say="a mounting kit">Mounting kit</option>
+          <option value="cables" data-say="cables and connectors">Cables &amp; connectors</option>
+          <option value="unsure" data-say="solar (not sure yet what we need)">Not sure yet</option>
+        </select>
+      </label>
+      <fieldset>
+        <legend>For our</legend>
+        <div class="chips">
+          <label><input type="radio" name="site" value="House" checked><span>House</span></label>
+          <label><input type="radio" name="site" value="Business"><span>Business</span></label>
+          <label><input type="radio" name="site" value="Farm"><span>Farm</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="kind-row">
+        <legend>Setup type</legend>
+        <div class="chips">
+          <label><input type="radio" name="kind" value="hybrid (with battery)" checked><span>Hybrid, with battery</span></label>
+          <label><input type="radio" name="kind" value="grid-tie (no battery)"><span>Grid-tie</span></label>
+          <label><input type="radio" name="kind" value="off-grid"><span>Off-grid</span></label>
+        </div>
+        <p class="quote-help">Not sure? Leave it on hybrid and ask us.</p>
+      </fieldset>
+      <div class="quote-row">
+        <label for="q-bill">Monthly electric bill
+          <select id="q-bill" name="bill">
+            <option value="">Skip</option>
+            <option>below ₱2,000</option>
+            <option>₱2,000 to ₱5,000</option>
+            <option>₱5,000 to ₱10,000</option>
+            <option>₱10,000 to ₱20,000</option>
+            <option>above ₱20,000</option>
+          </select>
+        </label>
+        <label for="q-place">Location
+          <input id="q-place" name="place" autocomplete="address-level2" placeholder="e.g. Toril, Davao City">
+        </label>
+      </div>
+      <label for="q-name">Your name <input id="q-name" name="name" autocomplete="name" placeholder="Optional"></label>
+      <p class="quote-preview" aria-live="polite"></p>
+      <button class="btn btn-red" type="submit">Copy &amp; open Messenger</button>
+    </form>
+    <div class="quote-alt">
+      <a class="btn btn-ghost quote-sms" href="sms:+639100947620">Send as text</a>
+      <a class="btn btn-ghost" href="tel:+639100947620">Call us</a>
+    </div>
+    <p class="quote-toast" role="status"></p>
+  </div>
+</dialog>
+
+<dialog class="msg" id="msgDialog" closedby="any" aria-labelledby="msg-title">
+  <div class="msg-inner">
+    <div class="msg-head">
+      <div><h2 id="msg-title">Message House of Solar</h2><p>Ask about prices, stock or installation.</p></div>
+      <form method="dialog"><button class="msg-close" aria-label="Close">✕</button></form>
+    </div>
+    <a class="btn btn-red" id="msgApp" hidden href="fb-messenger://user-thread/100063559015218">Open Messenger app</a>
+    <a class="btn btn-ghost" href="https://m.me/houseofsolardavao" target="_blank" rel="noopener">Message on Facebook</a>
+    <a class="btn btn-ghost" href="tel:+639100947620">Call 0910 094 7620</a>
+    <a class="btn btn-ghost" href="sms:+639100947620">Send a text</a>
+    <div class="msg-note" id="msgNote" hidden>
+      <p>See <strong>"Get the Messenger app"</strong>? Tap <strong>Open in Messenger</strong> below it instead.</p>
+      <p class="msg-note-small">Still not opening? Tap <strong>•••</strong> and choose <strong>Open in browser</strong>.</p>
+    </div>
+  </div>
+</dialog>
+<!--/DIALOGS-->
+
+<script>
+document.getElementById("yr").textContent = new Date().getFullYear();
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+  const clamp = v => Math.max(0, Math.min(1, v));
+  const seg = (p, a, b) => clamp((p - a) / (b - a));
+  const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const mix = (a, b, t) => { const A = hex(a), B = hex(b); return "#" + A.map((v, i) => Math.round(v + (B[i] - v) * t).toString(16).padStart(2, "0")).join(""); };
+
+  // ---- Install by scroll (the peak). Scroll position inside #install drives the drawing.
+  const sec = document.getElementById("install"), stage = document.getElementById("stage");
+  const svg = stage.querySelector(".stage-svg");
+  const rails = svg.querySelector(".rails"), pvs = [...svg.querySelectorAll(".pv")], wire = svg.querySelector(".wire");
+  const inv = svg.querySelector(".inv"), led = svg.querySelector(".led"), bars = [...svg.querySelectorAll(".lvl rect")].sort((a, b) => b.y.baseVal.value - a.y.baseVal.value);
+  const sun = svg.querySelector(".sun"), steps = [...document.querySelectorAll("#steps li")], cap = document.getElementById("stageCap");
+  const DAY = { sky: "#E6EEF2", wall: "#FBFAF7", roof: "#E4DDD1", door: "#D9CFC0", win: "#BFD3DD", shrub: "#9DB88A", line: "#16181C" };
+  const NIGHT = { sky: "#151A24", wall: "#2B303A", roof: "#3A3F49", door: "#3B3428", win: "#FFC85A", shrub: "#2F4A33", line: "#5B6271" };
+  const LABELS = ["Stage 1 · Rails", "Stage 2 · Panels", "Stage 3 · Inverter & battery", "Stage 4 · Lights on"];
+  let lastIdx = -1;
+
+  function draw(p) {
+    rails.style.opacity = seg(p, .05, .18);
+    pvs.forEach((g, i) => { const t = seg(p, .2 + i * .022, .27 + i * .022); g.style.opacity = t; g.style.transform = `translateY(${(1 - t) * -26}px)`; });
+    wire.style.strokeDashoffset = 1 - seg(p, .52, .62);
+    inv.style.opacity = seg(p, .55, .62);
+    led.style.fill = p > .62 ? "#3BB273" : "#D7262E";
+    bars.forEach((b, k) => { b.style.opacity = seg(p, .63 + k * .035, .66 + k * .035); });
+    const d = seg(p, .78, .93);
+    for (const k in DAY) svg.style.setProperty("--" + k, mix(DAY[k], NIGHT[k], d));
+    const u = .25 + .75 * p;
+    sun.style.transform = `translate(${100 + 620 * u}px,${440 - 340 * Math.sin(Math.PI * u)}px)`;
+    sun.style.opacity = 1 - d;
+    stage.classList.toggle("dusk", d > .5);
+    const idx = p < .2 ? 0 : p < .5 ? 1 : p < .76 ? 2 : 3;
+    if (idx !== lastIdx) {
+      steps.forEach((li, i) => { li.classList.toggle("on", i === idx); li.classList.toggle("done", i < idx); });
+      cap.textContent = LABELS[idx]; lastIdx = idx;
+    }
+  }
+
+  // ---- hero planes + strip highlight + count
+  const scene = document.getElementById("scene");
+  const sheets = [...document.querySelectorAll(".sheets a")];
+  const targets = sheets.map(a => document.querySelector(a.getAttribute("href")));
+  let ticking = false;
+  function frame() {
+    ticking = false;
+    const vh = innerHeight;
+    if (!reduce.matches) {
+      const r = sec.getBoundingClientRect();
+      draw(clamp(-r.top / (r.height - vh)));
+      const h = scene.getBoundingClientRect();
+      scene.style.setProperty("--hp", clamp(1 - h.bottom / (vh + h.height)).toFixed(3));
+    }
+    let cur = -1;
+    targets.forEach((t, i) => { if (t && t.getBoundingClientRect().top < vh * .45) cur = i; });
+    sheets.forEach((a, i) => a.setAttribute("aria-current", i === cur ? "true" : "false"));
+  }
+  const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(frame); } };
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll);
+  const applyMode = () => { if (reduce.matches) { draw(1); scene.style.setProperty("--hp", 0); } frame(); };
+  reduce.addEventListener("change", applyMode);
+  applyMode();
+
+  // pointer lean on the hero (mouse only)
+  if (matchMedia("(hover:hover) and (pointer:fine)").matches) {
+    scene.parentElement.addEventListener("pointermove", e => {
+      if (reduce.matches) return;
+      const r = scene.getBoundingClientRect();
+      scene.style.setProperty("--mx", ((e.clientX - r.left) / r.width - .5).toFixed(3));
+      scene.style.setProperty("--my", ((e.clientY - r.top) / r.height - .5).toFixed(3));
+    });
+  }
+
+  // ---- compare slider (native range input drives --x)
+  const cmp = document.getElementById("cmp"), range = document.getElementById("cmpRange");
+  const setX = () => { cmp.style.setProperty("--x", range.value + "%"); range.setAttribute("aria-valuetext", `${100 - range.value}% with solar showing`); };
+  range.addEventListener("input", setX); setX();
+
+  // ---- rail arrows
+  const rail = document.getElementById("rail");
+  document.querySelectorAll(".rail-btns button").forEach(b => b.addEventListener("click", () => {
+    rail.scrollBy({ left: +b.dataset.dir * rail.firstElementChild.offsetWidth * 1.05, behavior: reduce.matches ? "auto" : "smooth" });
+  }));
+
+  // ---- warranty count: 0 to the real number, once, when it shows up
+  const yrs = document.getElementById("yrs");
+  if (!reduce.matches && "IntersectionObserver" in window) {
+    yrs.textContent = "0";
+    const io = new IntersectionObserver(es => {
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      const t0 = performance.now();
+      const step = now => { const t = clamp((now - t0) / 900); yrs.textContent = Math.round(10 * (1 - Math.pow(1 - t, 3))); if (t < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    }, { threshold: .6 });
+    io.observe(yrs);
+  }
+})();
+</script>
+<script src="../assets/site.js" defer></script>
+</body>
+</html>
