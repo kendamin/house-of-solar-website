@@ -190,6 +190,14 @@
   .vcard .muted{color:var(--muted);font-weight:500;font-size:15px}
   .vcard .cta-row{margin-top:0}
 
+  .map-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+  .map-card iframe{display:block;width:100%;height:clamp(280px,42vw,440px);border:0;background:#E8E4DC}
+  .map-bar{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;padding:18px 20px}
+  .map-bar p b{display:block;font-size:17px}
+  .map-bar p span{color:var(--muted);font-size:14px}
+  .map-bar .cta-row{margin-top:0}
+  @media (max-width:520px){.map-bar .cta-row,.map-bar .btn{width:100%}.map-bar .btn{justify-content:center}}
+  .visit-grid .map-card{grid-column:1/-1}
   footer{border-top:1px solid var(--line);padding:36px 0 40px;color:var(--muted);font-size:14px}
   footer .wrap{display:grid;gap:14px}
   footer .row{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
@@ -438,6 +446,13 @@ document.addEventListener('click', function (e) {
             <div><dt>Email</dt><dd><a href="mailto:houseofsolar13@gmail.com">houseofsolar13@gmail.com</a></dd></div>
             <div><dt>Store hours</dt><dd>Monday to Saturday<br>8:00 AM to 5:00 PM<br><span class="muted">Holiday closures are posted on Facebook.</span></dd></div>
           </dl>
+        </div>
+        <div class="map-card">
+          <iframe src="https://maps.google.com/maps?q=House+of+Solar+Davao,+Davao-Bukidnon+Road,+Catalunan+Peque%C3%B1o,+Davao+City&amp;ll=7.06796,125.52698&amp;z=16&amp;output=embed" title="Map: House of Solar Davao on Davao-Bukidnon Road, Catalunan Pequeño, Davao City" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <div class="map-bar">
+            <p><b>House of Solar Davao</b><span>After City College of Davao, across Ivory Tire Trading</span></p>
+            <div class="cta-row"><a class="btn btn-red" href="https://www.google.com/maps/dir/?api=1&amp;destination=3G9G%2B5QQ+Davao+City" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8z"/></svg>Get directions</a><a class="btn btn-ghost" href="https://maps.app.goo.gl/4SUnkpNkTWq9NX2J6" target="_blank" rel="noopener">Open in Google Maps</a></div>
+          </div>
         </div>
       </div>
     </div>
