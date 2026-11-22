@@ -228,6 +228,25 @@
   .tb-info .logo-cell{display:flex;align-items:center;gap:12px}
   .tb-info .logo-cell img{width:56px;height:56px;border-radius:50%}
   .tb-info .logo-cell b{font-family:var(--display);font-weight:800;font-stretch:80%;font-size:24px;line-height:1}
+  .stars{display:inline-flex;gap:2px;color:#F5A623}
+  .stars svg{width:16px;height:16px;fill:currentColor}
+  .rev-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px}
+  .score{display:flex;align-items:center;gap:14px}
+  .score b{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:64px;line-height:.9}
+  .score > div{display:grid;gap:4px}
+  .score span:not(.stars){font-size:14px;color:var(--muted);font-weight:600}
+  .rev-grid{display:grid;gap:14px;margin-top:32px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+  .rev{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:16px;align-content:space-between}
+  .rev blockquote{margin:0}
+  .rev blockquote p{font-size:clamp(18px,2vw,21px);line-height:1.45;font-weight:500}
+  .rev blockquote p::before{content:"\201C"}
+  .rev blockquote p::after{content:"\201D"}
+  .rev figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font-size:14px}
+  .rev figcaption b{font-size:15px}
+  .rev figcaption span:last-child{color:var(--muted)}
+  .rev-more{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;color:var(--muted);font-size:14px}
+  .rev-title{font-size:clamp(32px,4.4vw,54px)}
+  .proof .rev{border-radius:0;border:2px solid var(--ink)}
   .map-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
   .map-card iframe{display:block;width:100%;height:clamp(280px,42vw,440px);border:0;background:#E8E4DC}
   .map-bar{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;padding:18px 20px}
@@ -469,6 +488,15 @@ document.addEventListener('click', function (e) {
         <figure class="rise"><img src="../assets/install2-640.webp" width="640" height="800" loading="lazy" style="object-position:50% 25%" alt="Two smiling customers beside a wall-mounted Luckener inverter, breaker box and battery"><figcaption class="mono">Another home setup</figcaption></figure>
         <div class="warranty rise"><b id="yrs">10</b><p>year replacement warranty<small>on Luckener inverters. House of Solar is a direct distributor.</small></p></div>
       </div>
+      <div class="rev-head" style="margin-top:56px">
+        <h3 class="rev-title">What customers say.</h3>
+        <div class="score"><b>5.0</b><div><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><span>4 reviews on Google</span></div></div>
+      </div>
+      <div class="rev-grid">
+        <figure class="rev rise"><blockquote><p>Affordable prices, staffs are polite and efficient. RECOMMENDED</p></blockquote><figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><b>Elmar G.</b><span>Google review</span></figcaption></figure>
+        <figure class="rev rise"><blockquote><p>QUALITY AND RELIABLE. You can also ask for tips, and there is a guide for your solar set-up.</p></blockquote><figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><b>Shannen Grace D.</b><span>Google review</span></figcaption></figure>
+      </div>
+      <div class="rev-more"><a class="btn btn-ghost" href="https://www.google.com/maps/place/House+of+Solar+Davao/@7.0679498,125.5269791,17z/data=!4m8!3m7!1s0x32f913004ae95bef:0x9efc70046a00a5a!8m2!3d7.0679498!4d125.5269791!9m1!1b1" target="_blank" rel="noopener">Read all reviews on Google</a><span>Two more customers left 5 stars without a comment.</span></div>
     </div>
   </section>
 

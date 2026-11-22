@@ -190,6 +190,23 @@
   .vcard .muted{color:var(--muted);font-weight:500;font-size:15px}
   .vcard .cta-row{margin-top:0}
 
+  .stars{display:inline-flex;gap:2px;color:#F5A623}
+  .stars svg{width:16px;height:16px;fill:currentColor}
+  .rev-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px}
+  .score{display:flex;align-items:center;gap:14px}
+  .score b{font-family:var(--display);font-weight:800;font-stretch:75%;font-size:64px;line-height:.9}
+  .score > div{display:grid;gap:4px}
+  .score span:not(.stars){font-size:14px;color:var(--muted);font-weight:600}
+  .rev-grid{display:grid;gap:14px;margin-top:32px;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+  .rev{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:16px;align-content:space-between}
+  .rev blockquote{margin:0}
+  .rev blockquote p{font-size:clamp(18px,2vw,21px);line-height:1.45;font-weight:500}
+  .rev blockquote p::before{content:"\201C"}
+  .rev blockquote p::after{content:"\201D"}
+  .rev figcaption{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;font-size:14px}
+  .rev figcaption b{font-size:15px}
+  .rev figcaption span:last-child{color:var(--muted)}
+  .rev-more{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;color:var(--muted);font-size:14px}
   .map-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
   .map-card iframe{display:block;width:100%;height:clamp(280px,42vw,440px);border:0;background:#E8E4DC}
   .map-bar{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;padding:18px 20px}
@@ -265,6 +282,7 @@ document.addEventListener('click', function (e) {
       <a href="#install">Installation</a>
       <a href="#ship">Shipping</a>
       <a href="#stock">Stock</a>
+      <a href="#reviews">Reviews</a>
       <a href="#visit">Visit</a>
     </nav>
     <button class="btn btn-red" type="button" data-quote>Get a free quote</button>
@@ -426,7 +444,21 @@ document.addEventListener('click', function (e) {
     </div>
   </section>
 
-  <section id="visit" style="padding-top:0">
+  <section id="reviews" aria-labelledby="rev-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="rev-head">
+        <div><p class="kicker">Reviews</p><h2 class="h2" id="rev-h">What customers say.</h2></div>
+        <div class="score"><b>5.0</b><div><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><span>4 reviews on Google</span></div></div>
+      </div>
+      <div class="rev-grid">
+        <figure class="rev reveal"><blockquote><p>Affordable prices, staffs are polite and efficient. RECOMMENDED</p></blockquote><figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><b>Elmar G.</b><span>Google review</span></figcaption></figure>
+        <figure class="rev reveal"><blockquote><p>QUALITY AND RELIABLE. You can also ask for tips, and there is a guide for your solar set-up.</p></blockquote><figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg></span><b>Shannen Grace D.</b><span>Google review</span></figcaption></figure>
+      </div>
+      <div class="rev-more"><a class="btn btn-ghost" href="https://www.google.com/maps/place/House+of+Solar+Davao/@7.0679498,125.5269791,17z/data=!4m8!3m7!1s0x32f913004ae95bef:0x9efc70046a00a5a!8m2!3d7.0679498!4d125.5269791!9m1!1b1" target="_blank" rel="noopener">Read all reviews on Google</a><span>Two more customers left 5 stars without a comment.</span></div>
+    </div>
+  </section>
+
+  <section id="visit">
     <div class="wrap">
       <p class="kicker">Visit the shop</p>
       <h2 class="h2">Find us on Davao-Bukidnon Road.</h2>
